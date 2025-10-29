@@ -5,7 +5,7 @@
  * License: https://bootstrapmade.com/license/
  */
 (function () {
-  ("use strict");
+  "use strict";
 
   /**
    * Easy selector helper function
@@ -61,7 +61,7 @@
     });
   };
   window.addEventListener("load", navbarlinksActive);
-  onscroll(document, navbarlinksActive);
+  onscroll(window, navbarlinksActive);
 
   /**
    * Scrolls to an element with header offset
@@ -272,17 +272,55 @@
   }
 })();
 
-filterSelection123("all123"); // Execute the function and show all columns
-function filterSelection123(c) {
-  var x, i;
-  x = document.getElementsByClassName("column123");
-  if (c == "all123") c = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show123");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show123");
+// Durée identique à la transition CSS (350 ms)
+var __FILTER_TRANSITION_MS = 350;
+
+filterSelection123("all123"); // initial
+
+function filterSelection123(category, btnEl /* optionnel: this */) {
+  var all = Array.prototype.slice.call(document.getElementsByClassName("column123"));
+  var targetClass = (category === "all123") ? null : category;
+
+  // Bouton actif (si fourni)
+  if (btnEl) {
+    var btns = document.getElementsByClassName("btn123");
+    for (var b = 0; b < btns.length; b++) btns[b].classList.remove("active123");
+    btnEl.classList.add("active123");
   }
+
+  // === Phase 1 : sortie de TOUTES les cartes visibles ===
+  var visibles = all.filter(function(el){ return el.classList.contains("show123"); });
+  visibles.forEach(function(el){
+    el.classList.add("exiting");   // lance le fondu/zoom out
+    // on ne met PAS display:none tout de suite, pour éviter la "téléportation"
+  });
+
+  // Après la sortie, on retire réellement du flux, puis on fait entrer la nouvelle sélection
+  setTimeout(function(){
+    // Retire du flux les anciennes cartes
+    visibles.forEach(function(el){
+      el.classList.remove("show123");
+      el.classList.remove("exiting");
+      el.style.display = "none";
+    });
+
+    // === Phase 2 : entrée des cartes de la catégorie ===
+    var toShow = all.filter(function(el){
+      return !targetClass || el.classList.contains(targetClass);
+    });
+
+    toShow.forEach(function(el){
+      el.style.display = "block";         // remettre dans le flux
+      el.getBoundingClientRect();         // force reflow pour déclencher la transition
+      el.classList.add("show123");        // -> fondu/zoom in
+    });
+
+    if (window.__revealPortfolio) {
+      setTimeout(function(){ window.__revealPortfolio(); }, __FILTER_TRANSITION_MS + 30);
+    }
+  }, __FILTER_TRANSITION_MS);
 }
+
 
 // Show filtered elements
 function w3AddClass(element1, name1) {
@@ -319,3 +357,4 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active123";
   });
 }
+
