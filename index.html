@@ -1,63 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3J0PYDHEY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3J0PYDHEY"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-Z3J0PYDHEY');
-</script>
+    gtag('config', 'G-Z3J0PYDHEY');
+    </script>
 
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>PortFolio</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
+    <meta content="Portfolio de Quentin WENDLING — BUT Informatique (AGED), projets, compétences et parcours." name="description" />
+    <meta content="Portfolio, Informatique, AGED, Développement, Data, Quentin Wendling" name="keywords" />
 
     <!-- Vendor CSS Files DE-->
-    <link
-            href="assets/vendor/bootstrap/css/bootstrap.min.css"
-            rel="stylesheet"
-    />
-    <link
-            href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-            rel="stylesheet"
-    />
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-    <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo"><a style="text-decoration:none" href="index.html#fond">PortFolio</a></h1>
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
 
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="#fond">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Présentation</a></li>
-                    <li><a class="nav-link scrollto" href="#formation">Formation</a></li>
-                    <li><a class="nav-link scrollto" href="#work">PortFolio</a></li>
-                    <li>
+<body>
 
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
-            <!-- .navbar -->
-        </div>
-    </header>  <body>
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+        <h1 class="logo"><a style="text-decoration:none" href="#fond">PortFolio</a></h1>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#fond">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">Présentation</a></li>
+                <li><a class="nav-link scrollto" href="#formation">Formation</a></li>
+                <li><a class="nav-link scrollto" href="#work">PortFolio</a></li>
+                <li>
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+    </div>
+</header>
+
 <!-- ======= Hero Section ======= -->
-<div
-        id="fond"
-        class="hero route bg-image"
-        style="background-image: url(assets/img/fond-login.jpg)"
->
+<div id="fond" class="hero route bg-image" style="background-image: url(assets/img/fond-login.jpg)">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
         <div class="table-cell">
@@ -84,11 +78,7 @@
                                 <div class="row">
                                     <div class="col-sm-6 col-md-5">
                                         <div class="about-img">
-                                            <img
-                                                    src="assets/img/profils.jpg"
-                                                    class="img-fluid rounded b-shadow-a"
-                                                    alt=""
-                                            />
+                                            <img src="assets/img/profils.jpg" class="img-fluid rounded b-shadow-a" alt="Photo de profil"/>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-7">
@@ -99,7 +89,10 @@
                                             </p>
                                             <p>
                                                 <span class="title-s">Profil: </span>
-                                                <span>Étudiant Informatique Parcours Administration, gestion et exploitation des données</span>
+                                                <span>Étudiant en Master Informatique – Parcours Données, Connaissances et Intelligence (DCI).
+                                                    </br>
+                                                    Curieux et passionné par la data, l’intelligence artificielle, mais aussi par le sport (musculation) et les échecs.
+                                                </span>
                                             </p>
                                             <p>
                                                 <span class="title-s">Email: </span>
@@ -115,24 +108,13 @@
                                 </div>
                                 <div class="skill-mf">
                                     <p class="title-s">Compétences informatiques</p>
-                                    <span>Python</span> <span class="pull-right">95%</span>
+                                    <span>Python (Data Science, IA)</span> <span class="pull-right">95%</span>
                                     <div class="progress">
                                         <div
                                                 class="progress-bar"
                                                 role="progressbar"
                                                 style="width: 95%"
                                                 aria-valuenow="95"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                    <span>HTML/CSS</span> <span class="pull-right">80%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width: 80%"
-                                                aria-valuenow="80"
                                                 aria-valuemin="0"
                                                 aria-valuemax="100"
                                         ></div>
@@ -148,6 +130,51 @@
                                                 aria-valuemax="100"
                                         ></div>
                                     </div>
+                                    <span>Machine Learning / Deep Learning / LLM (TensorFlow, Scikit-learn, Keras)</span> <span class="pull-right">85%</span>
+                                    <div class="progress">
+                                        <div
+                                                class="progress-bar"
+                                                role="progressbar"
+                                                style="width: 85%"
+                                                aria-valuenow="85"
+                                                aria-valuemin="0"
+                                                aria-valuemax="100"
+                                        ></div>
+                                    </div>
+                                    <span>Data Visualization (Matplotlib, Seaborn, Power BI)</span> <span class="pull-right">80%</span>
+                                    <div class="progress">
+                                        <div
+                                                class="progress-bar"
+                                                role="progressbar"
+                                                style="width: 80%"
+                                                aria-valuenow="80"
+                                                aria-valuemin="0"
+                                                aria-valuemax="100"
+                                        ></div>
+                                    </div>
+                                    <span>R (Analyse statistique)</span> <span class="pull-right">75%</span>
+                                    <div class="progress">
+                                        <div
+                                                class="progress-bar"
+                                                role="progressbar"
+                                                style="width: 75%"
+                                                aria-valuenow="75"
+                                                aria-valuemin="0"
+                                                aria-valuemax="100"
+                                        ></div>
+                                    </div>
+
+                                    <span>HTML/CSS/JS</span> <span class="pull-right">80%</span>
+                                    <div class="progress">
+                                        <div
+                                                class="progress-bar"
+                                                role="progressbar"
+                                                style="width: 80%"
+                                                aria-valuenow="80"
+                                                aria-valuemin="0"
+                                                aria-valuemax="100"
+                                        ></div>
+                                    </div>
                                     <span>PHP</span> <span class="pull-right">65%</span>
                                     <div class="progress">
                                         <div
@@ -155,29 +182,6 @@
                                                 role="progressbar"
                                                 style="width: 65%"
                                                 aria-valuenow="65"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                    <span>JAVASCRIPT</span>
-                                    <span class="pull-right">70%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width: 70%"
-                                                aria-valuenow="70"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                    <span>R</span> <span class="pull-right">75%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width: 75%"
-                                                aria-valuenow="75"
                                                 aria-valuemin="0"
                                                 aria-valuemax="100"
                                         ></div>
@@ -195,13 +199,13 @@
                                         ></div>
                                     </div>
                                     <span>C++</span>
-                                    <span class="pull-right">40%</span>
+                                    <span class="pull-right">45%</span>
                                     <div class="progress">
                                         <div
                                                 class="progress-bar"
                                                 role="progressbar"
-                                                style="width:40%"
-                                                aria-valuenow="40"
+                                                style="width:45%"
+                                                aria-valuenow="45"
                                                 aria-valuemin="0"
                                                 aria-valuemax="100"
                                         ></div>
@@ -226,13 +230,16 @@
                                         <h5 class="title-left">Présentation</h5>
                                     </div>
                                     <p class="lead">
-                                        Je suis Quentin WENDLING, actuellement étudiant en troisième année de bachelor Universitaire de Technologie (BUT) en Informatique, spécialisé dans le parcours AGED (Administration, Gestion et Exploitation des Données) à l'IUT de Paris - Rives de Seine (75016), faisant partie de l'université Paris Cité. Mon parcours est axé sur la conception et la gestion de bases de données de grand volume.
-
-                                        Parallèlement, je suis également inscrit à l'Université du Québec à Chicoutimi (UQAC) au Canada, où je poursuis un baccalauréat en informatique. Cette double inscription me permet d'acquérir une perspective internationale tout en élargissant mes compétences dans le domaine de l'informatique.
+                                        Je suis Quentin WENDLING, actuellement étudiant en deuxième année de Master Informatique – parcours Données, Connaissances et Intelligence (DCI) à l’Université Paris Cité.
+                                        </br></br>
+                                        Mon parcours se concentre sur la science des données, l’apprentissage automatique et la valorisation de la connaissance, avec un fort intérêt pour la modélisation, la prédiction et la prise de décision assistée par l’IA.
+                                        </br>
+                                        Titulaire d’un BUT Informatique (parcours AGED – Administration, Gestion et Exploitation des Données) obtenu à l’IUT de Paris – Rives de Seine, j’ai acquis de solides compétences en gestion de bases de données, traitement de données massives et développement d’applications.
+                                        </br>
+                                        En parallèle, j’ai également suivi un baccalauréat en informatique à l’Université du Québec à Chicoutimi (UQAC). Cette double inscription m’a permis d'acquérir une perspective internationale tout en élargissant mes compétences dans le domaine de l'informatique.
                                     </p>
                                     <p class="lead">
-                                        Je suis aussi diplomé d'un BAC STI2D (sciences et technologies de l'industrie et du développement durable)
-                                        Option SIN (Système d'Information et Numérique).
+                                        Je suis diplômé d’un baccalauréat STI2D, option Systèmes d’Information et Numérique (SIN), qui a constitué les premières bases de mon intérêt pour les technologies de l’information et la programmation.
                                     </p>
                                 </div>
                                 <p class="d-flex align-items-center justify-content-center"><a class="btn btn-primary btn js-scroll px-4" href="assets/doc/CV.pdf" target="blank" role="button">Accéder a mon CV</a></p>
@@ -256,6 +263,48 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="title-box">
+                            <h3 class="title-left">Qu'est-ce que le Master Informatique – Données, Connaissances et Intelligence (DCI) ?</h3>
+                            <br>
+                            <p class="lead">
+                                Le Master Informatique – parcours Données, Connaissances et Intelligence (<b>DCI</b>) forme des
+                                spécialistes capables de concevoir, développer et exploiter des systèmes intelligents
+                                basés sur les données.
+                                Il s’adresse aux étudiants souhaitant se spécialiser dans les domaines de la
+                                data science, de l’intelligence artificielle et de la valorisation de la connaissance,
+                                afin de répondre aux besoins croissants des entreprises dans le traitement et l’analyse
+                                de données massives.
+                            </p>
+                            <br>
+                            <h3 class="title-right">Le Master Informatique – parcours DCI :</h3>
+                        </div>
+
+                        <div class="about">
+                            <div class="box-shadow-full">
+                                <div class="row">
+                                    <p class="lead">
+                                    <div class="title-box-2">
+                                        <h4>Parcours DCI :</h4>
+                                    </div>
+                                    <span class="addMarge">Le parcours Données, Connaissances et Intelligence (DCI) regroupe les métiers liés à
+                                    la conception, au développement et à l’exploitation de systèmes</span>
+                                        <span class="addMarge">intelligents basés sur les données.
+                                    Il vise à former des professionnels capables de transformer des volumes importants
+                                    d’informations en connaissance</span>
+                                    <span class="addMarge"> exploitable, en s’appuyant sur les techniques de la
+                                    data science, de l’intelligence artificielle et de l’apprentissage automatique.</span>
+                                    <br/>
+                                        <span class="addMarge">Les étudiants en Master Informatique parcours <b>DCI</b> :</span>
+                                    <span class="addMarge">• Appliquent des méthodes d’apprentissage automatique et de deep learning pour modéliser et résoudre des problématiques réelles.</span>
+                                    <span class="addMarge">• Manipulent et analysent de grandes volumétries de données structurées et non structurées.</span>
+                                    <span class="addMarge">• Développent des systèmes d’aide à la décision intelligents intégrant des approches statistiques et symboliques.</span>
+                                    <span class="addMarge">• Exploitent les concepts d’ingénierie des connaissances, de web sémantique et d’extraction d’information.</span>
+                                    <span class="addMarge">• Visualisent, interprètent et valorisent les résultats pour la prise de décision et l’optimisation des processus.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="title-box">
                             <h3 class="title-left">Qu'est ce que le BUT Informatique ?</h3>
                             <br>
@@ -400,15 +449,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="title-box text-center">
+                    <p class="lead text-muted mb-4" style="max-width: 840px; margin: 0 auto;">
+                        Voici quelques exemples de projets réalisés au cours de ma formation et de mes expériences personnelles.
+                    </p>
+                </div>
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
                             <div id="myBtnContainer">
-                                <li class="btn123 active123" onclick="filterSelection123('all123')">Tout</li>
-                                <li class="btn123" onclick="filterSelection123('DevWeb')">Développement Web</li>
-                                <li class="btn123" onclick="filterSelection123('Stage')">Stage</li>
-                                <li class="btn123" onclick="filterSelection123('Program')">Programmation</li>
-                                <li class="btn123" onclick="filterSelection123('Perso')">Projet personnel</li>
+                                <li class="btn123 active123" onclick="filterSelection123('all123', this)">Tout</li>
+                                <li class="btn123" onclick="filterSelection123('DevWeb', this)">Développement Web</li>
+                                <li class="btn123" onclick="filterSelection123('Stage', this)">Stage</li>
+                                <li class="btn123" onclick="filterSelection123('Program', this)">Programmation</li>
+                                <li class="btn123" onclick="filterSelection123('Perso', this)">Projet personnel</li>
                             </div>
                         </ul>
                     </div>
@@ -475,7 +529,7 @@
                                     <div class="col-sm-8">
                                         <h2 class="w-title">Démineur</h2>
                                         <div class="w-more">
-                                            <span class="w-ctegory">Virtual Basic</span> / <span class="w-date">Mars. ~ Mai. 2022</span>
+                                            <span class="w-ctegory">Visual Basic</span> / <span class="w-date">Mars. ~ Mai. 2022</span>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
@@ -583,7 +637,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -607,11 +660,7 @@
 <!-- End  Footer -->
 
 <div id="preloader"></div>
-<a
-        href="#"
-        class="back-to-top d-flex align-items-center justify-content-center"
-><i class="bi bi-arrow-up-short"></i
-></a>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
