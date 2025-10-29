@@ -504,7 +504,7 @@ a:hover {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -639,7 +639,7 @@ a:hover {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -1118,11 +1118,39 @@ a:hover {
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
+/* Cartes par défaut : cachées, prêtes à animer */
 .column123 {
-  float: left;
-  width: 33.33%;
-  display: none; /* Hide columns by default */
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  display: none;
+  pointer-events: none;
 }
+
+/* Visible (phase entrée) */
+.column123.show123 {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Phase sortie (on garde display:block jusqu'à la fin de l'anim) */
+.column123.exiting {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+
+/* (Optionnel) petit feedback visuel sur le bouton actif */
+.btn123 {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.btn123.active123 {
+  background-color: #e8f0ff;
+  color: #2b5cff;
+}
+
 
 .show123 {
   display: block;
@@ -1132,21 +1160,31 @@ a:hover {
 .btn123 {
   border: none;
   outline: none;
-  padding: 12px 16px;
+  padding: 10px 20px;
   background-color: white;
+  color: #5f6368;
   cursor: pointer;
+  border-radius: 9999px; /* effet pill */
+  font-weight: 500;
+  transition: all 0.25s ease;
+  margin-right: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* ombre douce par défaut */
 }
 
-/* Add a grey background color on mouse-over Pas Utile*/
 .btn123:hover {
-  background-color: #ddd;
+  background-color: #e8f0fe;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* ombre plus marquée au survol */
+  transform: translateY(-2px); /* léger effet de levée */
 }
 
-/* Add a dark background color to the active button Pas Utile*/
-.btn123.active123 {
-  background-color: rgb(150, 178, 214);
-  color: rgb(65, 122, 207);
+
+.btn123.active {
+  transform: translateY(0); /* effet "pressé" */
+  background-color: #8ab4f8;
+  color: white;
+  box-shadow: 0 3px 8px rgba(138, 180, 248, 0.6); /* ombre colorée pour le bouton actif */
 }
+
 
 .portfolio-details {
   padding-top: 40px;
