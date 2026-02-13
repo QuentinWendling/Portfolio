@@ -301,7 +301,6 @@ function filterSelection123(category, btnEl /* optionnel: this */) {
     visibles.forEach(function(el){
       el.classList.remove("show123");
       el.classList.remove("exiting");
-      el.style.display = "none";
     });
 
     // === Phase 2 : entrée des cartes de la catégorie ===
@@ -310,7 +309,6 @@ function filterSelection123(category, btnEl /* optionnel: this */) {
     });
 
     toShow.forEach(function(el){
-      el.style.display = "block";         // remettre dans le flux
       el.getBoundingClientRect();         // force reflow pour déclencher la transition
       el.classList.add("show123");        // -> fondu/zoom in
     });
