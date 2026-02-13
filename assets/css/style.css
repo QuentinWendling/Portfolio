@@ -1123,16 +1123,18 @@ a:hover {
   opacity: 0;
   transform: scale(0.96);
   transition: opacity 0.35s ease, transform 0.35s ease;
-  display: none;
   pointer-events: none;
+  visibility: hidden;
+  position: absolute;
 }
 
 /* Visible (phase entrée) */
 .column123.show123 {
-  display: block;
   opacity: 1;
   transform: scale(1);
   pointer-events: auto;
+  visibility: visible;
+  position: relative;
 }
 
 /* Phase sortie (on garde display:block jusqu'à la fin de l'anim) */
@@ -1666,4 +1668,19 @@ footer .credits {
 
 footer .credits a {
   color: #fff;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column123 {
+  display: flex;
+}
+
+.work-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
