@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3J0PYDHEY"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z3J0PYDHEY');
+  </script>
+  
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Simulation de flux industriels — Quentin Wendling</title>
+
+  <meta name="theme-color" content="#070b14">
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23050b18%22/><path d=%22M18 26 Q50 12 82 26%22 fill=%22none%22 stroke=%22%230078ff%22 stroke-width=%226%22 stroke-linecap=%22round%22/><text x=%2250%22 y=%2268%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%230078ff%22 font-family=%22Arial, sans-serif%22 letter-spacing=%22-3%22>QW</text></svg>"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/styles.css"
+  >
+
+  <script>
+    const savedTheme = localStorage.getItem("portfolio-theme");
+
+    if (savedTheme) {
+      document.documentElement.dataset.theme = savedTheme;
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- En-tête -->
+  <header class="project-header">
+    <div class="project-header-inner">
+
+      <a
+        href="../../index.html"
+        class="project-logo"
+        aria-label="Retour à l'accueil"
+      >
+        <span class="project-logo-mark">QW</span>
+        <span>Quentin Wendling</span>
+      </a>
+
+      <nav class="project-header-actions">
+        <a
+          href="../../index.html#projects"
+          class="header-back-link"
+          data-i18n="nav.projects"
+        >
+          Projets
+        </a>
+
+        <button
+          class="language-toggle"
+          type="button"
+          aria-label="Switch website to English"
+        >
+          EN
+        </button>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Changer le thème"
+        >
+          <span class="theme-icon" aria-hidden="true">☼</span>
+        </button>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- Introduction -->
+    <section class="project-hero">
+      <div class="project-container">
+
+        <a
+          href="../../index.html#projects"
+          class="back-link"
+          data-i18n="project.back"
+        >
+          ← Retour aux projets
+        </a>
+
+        <div class="project-hero-grid">
+
+          <div class="project-hero-content">
+
+            <p
+              class="project-eyebrow"
+              data-i18n="project.category"
+            >
+              Rust · Simulation · Intelligence artificielle · Stage
+            </p>
+
+            <h1 data-i18n="project.title">
+              Simulation de flux industriels
+            </h1>
+
+            <p
+              class="project-introduction"
+              data-i18n="project.introduction"
+            >
+              Développement en équipe d'une solution modulaire permettant de
+              représenter des lignes de production, de simuler les déplacements
+              entre convoyeurs et nœuds, puis de comparer plusieurs scénarios de
+              décision.
+            </p>
+
+            <div class="project-tags">
+              <span>Rust</span>
+              <span>Simulation</span>
+              <span>Optimisation</span>
+              <span>IA</span>
+              <span>Logistique</span>
+              <span>Agile</span>
+            </div>
+
+            <div class="project-actions">
+              <a
+                href="#case-study"
+                class="button button-primary"
+                data-i18n="project.caseStudy"
+              >
+                Découvrir le projet
+              </a>
+
+              <a
+                href="#architecture"
+                class="button button-secondary"
+                data-i18n="project.architecture"
+              >
+                Voir l'architecture
+              </a>
+            </div>
+
+            <p class="project-confidentiality" data-i18n="project.confidentiality">
+              Projet réalisé en entreprise - les visuels présentés sont conceptuels.
+            </p>
+          </div>
+
+          <aside class="project-metadata">
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.period">Période</span>
+              <strong data-i18n="metadata.periodValue">
+                Stage en entreprise
+              </strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.context">Contexte</span>
+              <strong>Groupe Conseil Filion</strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.role">Rôle</span>
+              <strong data-i18n="metadata.roleValue">
+                Développement Rust & modélisation
+              </strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.type">Type</span>
+              <strong data-i18n="metadata.typeValue">
+                Simulateur de flux industriels
+              </strong>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Visuel conceptuel -->
+    <section class="project-cover">
+      <div class="project-container">
+        <figure class="project-cover-frame industrial-cover">
+          <figcaption id="industrial-visual-title" class="sr-only" data-i18n="visual.caption">
+            Représentation conceptuelle d'une ligne industrielle composée de convoyeurs, de nœuds de décision et de postes de traitement.
+          </figcaption>
+
+          <div class="industrial-simulator">
+            <div class="simulator-toolbar">
+              <div class="simulator-status">
+                <span class="simulator-status-dot" aria-hidden="true"></span>
+                <span data-i18n="visual.status">Simulation conceptuelle</span>
+              </div>
+
+              <div class="simulator-scenarios" data-i18n-aria-label="visual.scenariosLabel" aria-label="Scénarios de simulation">
+                <span class="active" data-i18n="visual.scenarioA">Scénario A</span>
+                <span data-i18n="visual.scenarioB">Scénario B</span>
+                <span data-i18n="visual.scenarioC">Scénario C</span>
+              </div>
+            </div>
+
+            <div class="simulator-body">
+              <div class="simulator-canvas">
+                <svg
+                  class="industrial-flow-svg"
+                  viewBox="0 0 920 540"
+                  role="img"
+                  aria-labelledby="industrial-visual-title"
+                >
+                  <defs>
+                    <filter id="nodeShadow" x="-30%" y="-30%" width="160%" height="160%">
+                      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-opacity="0.18"/>
+                    </filter>
+                  </defs>
+
+                  <path class="flow-route-base" d="M118 270 H330"/>
+                  <path class="flow-route-base" d="M330 270 C400 270 395 130 480 130 H620"/>
+                  <path class="flow-route-base" d="M330 270 C400 270 395 410 480 410 H620"/>
+                  <path class="flow-route-base" d="M620 130 C725 130 700 270 790 270"/>
+                  <path class="flow-route-base" d="M620 410 C725 410 700 270 790 270"/>
+
+                  <path class="flow-route-active" d="M118 270 H330"/>
+                  <path class="flow-route-active route-secondary" d="M330 270 C400 270 395 130 480 130 H620"/>
+                  <path class="flow-route-active" d="M330 270 C400 270 395 410 480 410 H620"/>
+                  <path class="flow-route-active route-secondary" d="M620 130 C725 130 700 270 790 270"/>
+                  <path class="flow-route-active" d="M620 410 C725 410 700 270 790 270"/>
+
+                  <circle class="flow-token" r="8">
+                    <animateMotion dur="3.4s" repeatCount="indefinite" path="M118 270 H330 C400 270 395 410 480 410 H620 C725 410 700 270 790 270"/>
+                  </circle>
+                  <circle class="flow-token flow-token-secondary" r="7">
+                    <animateMotion dur="4.2s" begin="-1.3s" repeatCount="indefinite" path="M118 270 H330 C400 270 395 130 480 130 H620 C725 130 700 270 790 270"/>
+                  </circle>
+                  <circle class="flow-token" r="6">
+                    <animateMotion dur="3.4s" begin="-2.1s" repeatCount="indefinite" path="M118 270 H330 C400 270 395 410 480 410 H620 C725 410 700 270 790 270"/>
+                  </circle>
+
+                  <g class="flow-node" transform="translate(54 218)" filter="url(#nodeShadow)">
+                    <rect class="flow-node-box flow-node-source" width="128" height="104" rx="22"/>
+                    <circle class="flow-node-icon" cx="64" cy="35" r="13"/>
+                    <text class="flow-node-title" x="64" y="69" text-anchor="middle" data-i18n="visual.source">Entrée</text>
+                    <text class="flow-node-subtitle" x="64" y="88" text-anchor="middle" data-i18n="visual.sourceType">Source</text>
+                  </g>
+
+                  <g class="flow-node" transform="translate(282 218)" filter="url(#nodeShadow)">
+                    <rect class="flow-node-box flow-node-decision" width="128" height="104" rx="22"/>
+                    <path class="flow-node-symbol" d="M50 34 H78 M64 20 V48"/>
+                    <text class="flow-node-title" x="64" y="69" text-anchor="middle" data-i18n="visual.node">Nœud</text>
+                    <text class="flow-node-subtitle" x="64" y="88" text-anchor="middle" data-i18n="visual.decision">Décision</text>
+                  </g>
+
+                  <g class="flow-node" transform="translate(478 78)" filter="url(#nodeShadow)">
+                    <rect class="flow-node-box" width="150" height="104" rx="22"/>
+                    <rect class="flow-machine-icon" x="55" y="20" width="40" height="28" rx="8"/>
+                    <text class="flow-node-title" x="75" y="69" text-anchor="middle" data-i18n="visual.stationA">Poste A</text>
+                    <text class="flow-node-subtitle" x="75" y="88" text-anchor="middle" data-i18n="visual.processing">Traitement</text>
+                  </g>
+
+                  <g class="flow-node" transform="translate(478 358)" filter="url(#nodeShadow)">
+                    <rect class="flow-node-box flow-node-highlight" width="150" height="104" rx="22"/>
+                    <rect class="flow-machine-icon" x="55" y="20" width="40" height="28" rx="8"/>
+                    <text class="flow-node-title" x="75" y="69" text-anchor="middle" data-i18n="visual.stationB">Poste B</text>
+                    <text class="flow-node-subtitle" x="75" y="88" text-anchor="middle" data-i18n="visual.optimized">Optimisé</text>
+                  </g>
+
+                  <g class="flow-node" transform="translate(748 218)" filter="url(#nodeShadow)">
+                    <rect class="flow-node-box flow-node-output" width="128" height="104" rx="22"/>
+                    <path class="flow-node-symbol" d="M48 34 H80 M70 24 L80 34 L70 44"/>
+                    <text class="flow-node-title" x="64" y="69" text-anchor="middle" data-i18n="visual.output">Sortie</text>
+                    <text class="flow-node-subtitle" x="64" y="88" text-anchor="middle" data-i18n="visual.destination">Destination</text>
+                  </g>
+                </svg>
+              </div>
+
+              <aside class="simulator-panel">
+                <p class="simulator-panel-label" data-i18n="visual.metrics">Indicateurs simulés</p>
+
+                <div class="simulator-metric">
+                  <span data-i18n="visual.throughput">Débit</span>
+                  <strong data-i18n="visual.stable">Stable</strong>
+                  <div class="simulator-bar"><i style="width: 82%"></i></div>
+                </div>
+
+                <div class="simulator-metric">
+                  <span data-i18n="visual.utilization">Utilisation</span>
+                  <strong data-i18n="visual.balanced">Équilibrée</strong>
+                  <div class="simulator-bar"><i style="width: 71%"></i></div>
+                </div>
+
+                <div class="simulator-decision">
+                  <span data-i18n="visual.recommendation">Décision suggérée</span>
+                  <strong data-i18n="visual.routeB">Prioriser le poste B</strong>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+
+    <!-- Étude de cas -->
+    <section id="case-study" class="case-study">
+      <div class="project-container case-study-grid">
+
+        <aside class="case-study-navigation">
+          <p data-i18n="summary.title">Sommaire</p>
+
+          <nav>
+            <a href="#context" data-i18n="summary.context">
+              Le contexte
+            </a>
+
+            <a href="#objective" data-i18n="summary.objective">
+              Les objectifs
+            </a>
+
+            <a href="#contributions" data-i18n="summary.contributions">
+              Mes contributions
+            </a>
+
+            <a href="#architecture" data-i18n="summary.architecture">
+              L'architecture
+            </a>
+
+            <a href="#results" data-i18n="summary.results">
+              Les résultats
+            </a>
+
+            <a href="#lessons" data-i18n="summary.lessons">
+              Enseignements
+            </a>
+          </nav>
+        </aside>
+
+
+        <div class="case-study-content">
+
+          <section id="context" class="content-section">
+            <p class="section-number">01</p>
+
+            <h2 data-i18n="context.title">
+              Le contexte
+            </h2>
+
+            <p data-i18n="context.p1">
+              Une chaîne de production industrielle peut être représentée comme
+              un réseau de sources, de convoyeurs, de nœuds de décision, de postes
+              de traitement et de sorties. La performance globale dépend autant de
+              chaque équipement que de la manière dont les flux sont orientés.
+            </p>
+
+            <p data-i18n="context.p2">
+              Durant mon stage, j'ai participé avec une équipe de stagiaires au
+              développement d'une solution pour le Groupe Conseil Filion. Le but
+              était de disposer d'un environnement générique pour construire des
+              chemins industriels, lancer des simulations et observer les effets
+              de différentes règles de décision.
+            </p>
+          </section>
+
+
+          <section id="objective" class="content-section">
+            <p class="section-number">02</p>
+
+            <h2 data-i18n="objective.title">
+              Les objectifs
+            </h2>
+
+            <div class="objective-grid">
+
+              <article class="objective-card">
+                <span>01</span>
+
+                <h3 data-i18n="objective.card1Title">
+                  Modéliser les flux
+                </h3>
+
+                <p data-i18n="objective.card1Text">
+                  Représenter de manière modulaire les convoyeurs, les nœuds, les
+                  postes et les règles qui composent une ligne industrielle.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>02</span>
+
+                <h3 data-i18n="objective.card2Title">
+                  Tester des scénarios
+                </h3>
+
+                <p data-i18n="objective.card2Text">
+                  Modifier les chemins et les décisions afin de comparer leur
+                  impact sur le débit, les attentes et l'utilisation du système.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>03</span>
+
+                <h3 data-i18n="objective.card3Title">
+                  Aider à l'optimisation
+                </h3>
+
+                <p data-i18n="objective.card3Text">
+                  Exploiter des algorithmes d'optimisation et d'intelligence
+                  artificielle pour identifier des configurations plus efficaces.
+                </p>
+              </article>
+
+            </div>
+          </section>
+
+
+          <section id="contributions" class="content-section">
+            <p class="section-number">03</p>
+
+            <h2 data-i18n="contributions.title">
+              Mes contributions
+            </h2>
+
+            <p data-i18n="contributions.text">
+              Le travail a combiné analyse métier, conception logicielle et
+              expérimentation. La solution devait rester suffisamment générique
+              pour représenter plusieurs organisations de production sans être
+              liée à une seule chaîne industrielle.
+            </p>
+
+            <div class="feature-list">
+
+              <div class="feature-item">
+                <span class="feature-icon">01</span>
+
+                <div>
+                  <h3 data-i18n="contributions.feature1Title">
+                    Analyse des données logistiques
+                  </h3>
+
+                  <p data-i18n="contributions.feature1Text">
+                    Étude des flux, des temps de passage et des contraintes afin
+                    d'identifier les informations nécessaires à la simulation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">02</span>
+
+                <div>
+                  <h3 data-i18n="contributions.feature2Title">
+                    Modèle de domaine modulaire
+                  </h3>
+
+                  <p data-i18n="contributions.feature2Text">
+                    Conception de composants réutilisables pour assembler des
+                    convoyeurs, des nœuds, des ressources et des règles de routage.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">03</span>
+
+                <div>
+                  <h3 data-i18n="contributions.feature3Title">
+                    Moteur de simulation en Rust
+                  </h3>
+
+                  <p data-i18n="contributions.feature3Text">
+                    Développement d'une base robuste et performante pour faire
+                    évoluer les entités, propager les événements et collecter les
+                    indicateurs.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">04</span>
+
+                <div>
+                  <h3 data-i18n="contributions.feature4Title">
+                    Évaluation de décisions
+                  </h3>
+
+                  <p data-i18n="contributions.feature4Text">
+                    Création de simulations comparables pour mesurer les effets de
+                    différentes stratégies et orienter l'optimisation des flux.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">05</span>
+
+                <div>
+                  <h3 data-i18n="contributions.feature5Title">
+                    Travail collaboratif Agile
+                  </h3>
+
+                  <p data-i18n="contributions.feature5Text">
+                    Coordination avec les autres stagiaires, revues de code,
+                    découpage des fonctionnalités et itérations régulières avec
+                    l'équipe projet.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <section id="architecture" class="content-section">
+            <p class="section-number">04</p>
+
+            <h2 data-i18n="architecture.title">
+              L'architecture de la solution
+            </h2>
+
+            <p data-i18n="architecture.text">
+              L'architecture sépare la description du système, l'exécution de la
+              simulation et l'analyse des résultats. Cette organisation facilite
+              l'ajout de nouveaux composants et la comparaison de scénarios sans
+              modifier l'ensemble du moteur.
+            </p>
+
+            <div class="architecture-diagram">
+
+              <div class="architecture-block">
+                <span data-i18n="architecture.inputLabel">Configuration</span>
+                <strong data-i18n="architecture.inputTitle">
+                  Convoyeurs · Nœuds · Ressources
+                </strong>
+                <p data-i18n="architecture.inputText">
+                  Construction d'un graphe industriel et définition des règles de
+                  circulation, capacités et contraintes.
+                </p>
+              </div>
+
+              <span class="architecture-arrow">→</span>
+
+              <div class="architecture-block">
+                <span data-i18n="architecture.engineLabel">Moteur Rust</span>
+                <strong data-i18n="architecture.engineTitle">
+                  Événements · États · Routage
+                </strong>
+                <p data-i18n="architecture.engineText">
+                  Exécution des déplacements, résolution des décisions et suivi de
+                  l'évolution du système simulé.
+                </p>
+              </div>
+
+              <span class="architecture-arrow">→</span>
+
+              <div class="architecture-block">
+                <span data-i18n="architecture.outputLabel">Analyse</span>
+                <strong data-i18n="architecture.outputTitle">
+                  Scénarios · Indicateurs · Optimisation
+                </strong>
+                <p data-i18n="architecture.outputText">
+                  Comparaison des performances et identification des configurations
+                  offrant le meilleur comportement global.
+                </p>
+              </div>
+
+            </div>
+          </section>
+
+
+          <section id="results" class="content-section">
+            <p class="section-number">05</p>
+
+            <h2 data-i18n="results.title">
+              Les résultats principaux
+            </h2>
+
+            <p data-i18n="results.text">
+              Le projet a abouti à une base de simulation capable de représenter
+              différents chemins industriels, d'exécuter plusieurs scénarios et
+              de produire des indicateurs comparables. Les évolutions réalisées
+              ont apporté des gains mesurables de performance tout en renforçant
+              la modularité de la solution.
+            </p>
+
+            <div class="result-metrics industrial-result-metrics">
+              <article>
+                <span data-i18n="results.metric1Label">Performance</span>
+                <strong data-i18n="results.metric1Value">Mesurable</strong>
+                <p data-i18n="results.metric1Text">
+                  Des indicateurs permettent d'observer l'effet réel des choix de
+                  routage et des optimisations.
+                </p>
+              </article>
+
+              <article>
+                <span data-i18n="results.metric2Label">Modularité</span>
+                <strong data-i18n="results.metric2Value">Extensible</strong>
+                <p data-i18n="results.metric2Text">
+                  De nouveaux composants et comportements peuvent être intégrés
+                  sans reconstruire toute la solution.
+                </p>
+              </article>
+
+              <article>
+                <span data-i18n="results.metric3Label">Décision</span>
+                <strong data-i18n="results.metric3Value">Multi-scénarios</strong>
+                <p data-i18n="results.metric3Text">
+                  Plusieurs stratégies peuvent être exécutées dans un cadre commun
+                  afin de faciliter leur comparaison.
+                </p>
+              </article>
+
+              <article>
+                <span data-i18n="results.metric4Label">Développement</span>
+                <strong>Agile</strong>
+                <p data-i18n="results.metric4Text">
+                  Une progression itérative soutenue par la collaboration, les
+                  retours réguliers et les revues de code.
+                </p>
+              </article>
+            </div>
+
+            <div class="result-takeaway">
+              <span data-i18n="results.takeawayLabel">À retenir</span>
+              <p data-i18n="results.takeawayText">
+                La principale valeur de la solution est de transformer une chaîne
+                industrielle complexe en un modèle testable : les décisions peuvent
+                être comparées avant d'être appliquées à un système réel.
+              </p>
+            </div>
+          </section>
+
+
+          <section id="lessons" class="content-section">
+            <p class="section-number">06</p>
+
+            <h2 data-i18n="lessons.title">
+              Ce que ce projet m'a appris
+            </h2>
+
+            <p data-i18n="lessons.text">
+              Ce stage m'a permis d'aborder un problème industriel concret en
+              reliant compréhension métier, architecture logicielle et mesure de
+              performance. J'ai également découvert les contraintes d'un projet
+              collaboratif destiné à évoluer au-delà d'un prototype isolé.
+            </p>
+
+            <ul class="lessons-list">
+              <li data-i18n="lessons.item1">
+                Modéliser un système industriel sous forme de graphe de composants
+              </li>
+
+              <li data-i18n="lessons.item2">
+                Concevoir un moteur de simulation modulaire et performant en Rust
+              </li>
+
+              <li data-i18n="lessons.item3">
+                Transformer des données logistiques en indicateurs exploitables
+              </li>
+
+              <li data-i18n="lessons.item4">
+                Comparer des scénarios plutôt que rechercher une solution unique
+              </li>
+
+              <li data-i18n="lessons.item5">
+                Développer en équipe avec des pratiques Agile et des revues de code
+              </li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Projet suivant -->
+    <section class="next-project">
+      <div class="project-container">
+
+        <a
+          href="collaborative-map.html"
+          class="next-project-link"
+        >
+          <span data-i18n="next.label">Projet suivant</span>
+
+          <strong data-i18n="next.title">
+            Collaborative Map
+          </strong>
+
+          <span class="next-arrow">→</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="project-footer">
+    <div class="project-container project-footer-inner">
+
+      <p>
+        © <span id="year"></span> Quentin Wendling
+      </p>
+
+      <a
+        href="../../index.html#projects"
+        data-i18n="footer.back"
+      >
+        Retour aux projets ↑
+      </a>
+
+    </div>
+  </footer>
+
+  <script src="./js/project-page-industrial-flow-simulation.js"></script>
+</body>
+</html>

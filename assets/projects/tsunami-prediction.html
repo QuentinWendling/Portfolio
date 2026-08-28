@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3J0PYDHEY"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z3J0PYDHEY');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Détection de séismes océaniques — Quentin Wendling</title>
+
+  <meta
+    name="description"
+    content="Projet de classification supervisée appliqué à des données sismiques : exploration, gestion du déséquilibre, comparaison de modèles et interprétation des performances."
+  >
+
+  <meta name="theme-color" content="#070b14">
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23050b18%22/><path d=%22M18 26 Q50 12 82 26%22 fill=%22none%22 stroke=%22%230078ff%22 stroke-width=%226%22 stroke-linecap=%22round%22/><text x=%2250%22 y=%2268%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%230078ff%22 font-family=%22Arial, sans-serif%22 letter-spacing=%22-3%22>QW</text></svg>"
+  >
+
+  <!-- Feuille commune à toutes les pages projet -->
+  <link
+  href="../vendor/swiper/swiper-bundle.min.css"
+  rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // La page reste utilisable lorsque le stockage local est indisponible.
+    }
+  </script>
+</head>
+
+<body>
+  <header class="project-header">
+    <div class="project-header-inner">
+      <a
+        href="../../index.html"
+        class="project-logo"
+        aria-label="Retour à l'accueil"
+        data-i18n-aria="header.homeAria"
+      >
+        <span class="project-logo-mark">QW</span>
+        <span>Quentin Wendling</span>
+      </a>
+
+      <nav class="project-header-actions" aria-label="Navigation du projet" data-i18n-aria="nav.projectAria">
+        <a href="../../index.html#projects" class="header-back-link" data-i18n="nav.projects">
+          Projets
+        </a>
+
+        <button class="language-toggle" type="button" aria-label="Switch website to English">
+          EN
+        </button>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Changer le thème"
+          data-i18n-aria="theme.toggleAria"
+        >
+          <span class="theme-icon" aria-hidden="true">☼</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="project-container">
+        <a href="../../index.html#projects" class="back-link" data-i18n="project.back">
+          ← Retour aux projets
+        </a>
+
+        <div class="project-hero-grid">
+          <div class="project-hero-content">
+            <p class="project-eyebrow" data-i18n="project.category">
+              Data Science · Classification supervisée & données déséquilibrées
+            </p>
+
+            <h1 data-i18n="project.title">
+              Détection de séismes océaniques
+            </h1>
+
+            <p class="project-introduction" data-i18n="project.introduction">
+              Conception d'un pipeline complet pour explorer des données sismiques,
+              traiter une classe extrêmement rare et comparer plusieurs stratégies
+              de modélisation avec une lecture critique des performances.
+            </p>
+
+            <div class="project-disclaimer" role="note">
+              <span class="disclaimer-icon" aria-hidden="true"></span>
+              <p data-i18n="project.disclaimer">
+                La variable « tsunami » est utilisée comme classe d'événement sismique
+                océanique important. Le projet ne simule ni la vague, ni sa propagation,
+                et ne constitue pas un système d'alerte.
+              </p>
+            </div>
+
+            <div class="project-tags" aria-label="Technologies utilisées" data-i18n-aria="project.tagsAria">
+              <span>Python</span>
+              <span>Random Forest</span>
+              <span>SVM</span>
+              <span>XGBoost</span>
+              <span>SMOTE</span>
+            </div>
+
+            <div class="project-actions">
+              <a
+                href="https://github.com/QuentinWendling/Prediction-de-tsunami-a-partir-de-donnees-sismiques"
+                class="button button-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="project.github"
+              >
+                Voir le projet sur GitHub
+              </a>
+
+              <a href="#case-study" class="button button-secondary" data-i18n="project.caseStudy">
+                Découvrir l'étude
+              </a>
+            </div>
+          </div>
+
+          <aside class="project-metadata">
+            <div class="metadata-item">
+              <span data-i18n="metadata.type">Type</span>
+              <strong data-i18n="metadata.typeValue">Classification binaire</strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.challenge">Défi principal</span>
+              <strong data-i18n="metadata.challengeValue">Classe positive extrêmement rare</strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.role">Rôle</span>
+              <strong data-i18n="metadata.roleValue">Analyse, modélisation & évaluation</strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.models">Modèles</span>
+              <strong data-i18n="metadata.modelsValue">Random Forest, SVM & XGBoost</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-cover">
+      <div class="project-container">
+        <figure class="project-cover-frame swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./img/tsunami/matrice-correlation.png" alt="matrice de correlation">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/tsunami/correlation-cible.png" alt="Correlation">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/tsunami/matrice-confusion.png" alt="matrice de confusion">
+            </div>            
+          </div>
+          <div class="swiper-pagination"></div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="case-study" class="case-study">
+      <div class="project-container case-study-grid">
+        <aside class="case-study-navigation">
+          <p data-i18n="summary.title">Sommaire</p>
+          <nav>
+            <a href="#context" data-i18n="summary.context">Le défi</a>
+            <a href="#objective" data-i18n="summary.objective">Les compétences</a>
+            <a href="#solution" data-i18n="summary.solution">La méthode</a>
+            <a href="#results" data-i18n="summary.results">Les résultats</a>
+            <a href="#gallery" data-i18n="summary.gallery">Les visualisations</a>
+            <a href="#lessons" data-i18n="summary.lessons">Enseignement</a>
+          </nav>
+        </aside>
+
+        <div class="case-study-content">
+          <section id="context" class="content-section">
+            <p class="section-number">01</p>
+
+            <h2 data-i18n="context.title">Construire un modèle sur un signal rare</h2>
+
+            <p data-i18n="context.p1">
+              Le projet part d'un problème particulièrement exigeant en data science :
+              identifier une classe positive très rare au sein de plusieurs centaines de
+              milliers d'événements sismiques. Dans ce contexte, une accuracy élevée peut
+              être obtenue sans produire un modèle réellement utile.
+            </p>
+
+            <p data-i18n="context.p2">
+              Mon travail a donc consisté à structurer l'analyse autour du déséquilibre des
+              classes, à tester plusieurs techniques d'échantillonnage et à comparer les
+              modèles avec des métriques détaillées pour chaque classe.
+            </p>
+
+            <div class="scope-comparison" role="group" aria-label="Enjeux du projet" data-i18n-aria="context.scopeAria">
+              <article>
+                <span class="scope-label scope-label-positive" data-i18n="context.challengeLabel">Défi data</span>
+                <strong data-i18n="context.challengeTitle">Détecter l'exception dans la masse</strong>
+                <p data-i18n="context.challengeText">
+                  La classe positive représente environ 0,045 % des observations visibles dans la matrice de confusion.
+                </p>
+              </article>
+
+              <article>
+                <span class="scope-label scope-label-secondary" data-i18n="context.valueLabel">Valeur du projet</span>
+                <strong data-i18n="context.valueTitle">Faire des choix de modèle argumentés</strong>
+                <p data-i18n="context.valueText">
+                  L'objectif n'est pas d'afficher un score flatteur, mais de comprendre les compromis entre détection, faux positifs et généralisation.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section id="objective" class="content-section">
+            <p class="section-number">02</p>
+
+            <h2 data-i18n="objective.title">Les compétences mobilisées</h2>
+
+            <div class="objective-grid">
+              <article class="objective-card">
+                <span>01</span>
+                <h3 data-i18n="objective.card1Title">Explorer et préparer</h3>
+                <p data-i18n="objective.card1Text">
+                  Étudier les corrélations, sélectionner les variables et préparer magnitude, coordonnées, profondeur et distance à la côte.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>02</span>
+                <h3 data-i18n="objective.card2Title">Traiter le déséquilibre</h3>
+                <p data-i18n="objective.card2Text">
+                  Comparer RandomOverSampler, SMOTE et plusieurs méthodes de sous-échantillonnage pour rendre l'apprentissage plus pertinent.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>03</span>
+                <h3 data-i18n="objective.card3Title">Évaluer avec discernement</h3>
+                <p data-i18n="objective.card3Text">
+                  Lire précision, rappel, F1-score et matrice de confusion par classe plutôt que de s'arrêter à l'accuracy globale.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section id="solution" class="content-section">
+            <p class="section-number">03</p>
+
+            <h2 data-i18n="solution.title">Un benchmark conçu pour le déséquilibre</h2>
+
+            <p data-i18n="solution.text">
+              La démarche combine analyse exploratoire, rééquilibrage du jeu d'entraînement
+              et comparaison de plusieurs familles de modèles. Chaque expérimentation est
+              évaluée séparément sur les classes 0 et 1 afin de rendre visibles les compromis
+              que masquerait une métrique unique.
+            </p>
+
+            <div class="feature-list">
+              <div class="feature-item">
+                <span class="feature-icon">01</span>
+                <div>
+                  <h3 data-i18n="solution.feature1Title">Analyse exploratoire</h3>
+                  <p data-i18n="solution.feature1Text">
+                    Construction d'une matrice de corrélation et étude ciblée des relations entre les variables explicatives et la classe « tsunami ».
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">02</span>
+                <div>
+                  <h3 data-i18n="solution.feature2Title">Stratégies d'échantillonnage</h3>
+                  <p data-i18n="solution.feature2Text">
+                    Test d'un apprentissage sans correction, du sur-échantillonnage aléatoire, de SMOTE et de deux approches de sous-échantillonnage.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">03</span>
+                <div>
+                  <h3 data-i18n="solution.feature3Title">Comparaison de modèles</h3>
+                  <p data-i18n="solution.feature3Text">
+                    Benchmark de Random Forest, SVM et XGBoost afin d'observer leur comportement face à une cible rare.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">04</span>
+                <div>
+                  <h3 data-i18n="solution.feature4Title">Analyse des erreurs</h3>
+                  <p data-i18n="solution.feature4Text">
+                    Lecture détaillée des vrais positifs, faux négatifs et faux positifs pour juger l'utilité réelle du modèle.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="results" class="content-section">
+            <p class="section-number">04</p>
+
+            <h2 data-i18n="results.title">Interpréter au-delà de l'accuracy</h2>
+
+            <p data-i18n="results.introduction">
+              La matrice de confusion fournie met en évidence le cœur du problème : le modèle
+              retrouve la majorité des événements positifs, mais la rareté extrême de cette
+              classe transforme un faible taux de faux positifs en plusieurs milliers de prédictions positives erronées.
+            </p>
+
+            <div class="result-metrics" aria-label="Indicateurs calculés à partir de la matrice de confusion" data-i18n-aria="results.metricsAria">
+              <article>
+                <span data-i18n="results.metric1Label">Part de la classe positive</span>
+                <strong>0,045 %</strong>
+                <p data-i18n="results.metric1Text">382 événements positifs sur 840 462 observations.</p>
+              </article>
+
+              <article>
+                <span data-i18n="results.metric2Label">Rappel de la classe positive</span>
+                <strong>95,8 %</strong>
+                <p data-i18n="results.metric2Text">366 événements détectés et 16 manqués.</p>
+              </article>
+
+              <article>
+                <span data-i18n="results.metric3Label">Précision de la classe positive</span>
+                <strong>7,8 %</strong>
+                <p data-i18n="results.metric3Text">La majorité des prédictions positives sont des faux positifs.</p>
+              </article>
+
+              <article>
+                <span data-i18n="results.metric4Label">Accuracy globale</span>
+                <strong>99,5 %</strong>
+                <p data-i18n="results.metric4Text">Un score élevé qui masque le déséquilibre du problème.</p>
+              </article>
+            </div>
+
+            <div class="result-takeaway">
+              <span data-i18n="results.takeawayLabel">Lecture data science</span>
+              <p data-i18n="results.takeawayText">
+                Le projet démontre qu'un modèle ne se choisit pas sur son accuracy seule. Sur une cible rare, il faut arbitrer entre rappel, précision et coût des faux positifs, puis relier ces métriques au besoin réel.
+              </p>
+            </div>
+          </section>
+
+          <section id="gallery" class="content-section">
+            <p class="section-number">05</p>
+
+            <h2 data-i18n="gallery.title">Les résultats en images</h2>
+
+            <p data-i18n="gallery.introduction">
+              Ces visualisations retracent l'analyse : relations entre variables, comparaison des expériences de rééquilibrage et lecture des erreurs du modèle.
+            </p>
+
+            <div class="project-gallery tsunami-gallery">
+              <figure class="gallery-main tsunami-gallery-main">
+                <img
+                  id="gallery-main-image"
+                  src="./img/tsunami/matrice-correlation.png"
+                  alt="Matrice de corrélation des variables sismiques"
+                >
+                <figcaption id="gallery-caption" data-i18n="gallery.caption1">
+                  Matrice de corrélation : exploration des relations entre les variables du jeu de données.
+                </figcaption>
+              </figure>
+
+              <div class="gallery-thumbnails tsunami-gallery-thumbnails" role="group" aria-label="Choisir une visualisation" data-i18n-aria="gallery.buttonsAria">
+                <button
+                  class="gallery-thumbnail active"
+                  type="button"
+                  data-image="./img/tsunami/matrice-correlation.png"
+                  data-alt-fr="Matrice de corrélation des variables sismiques"
+                  data-alt-en="Correlation matrix of seismic variables"
+                  data-caption-key="gallery.caption1"
+                  aria-label="Afficher la matrice de corrélation"
+                  data-i18n-aria="gallery.button1Aria"
+                >
+                  <img src="./img/tsunami/matrice-correlation.png" alt="">
+                </button>
+
+                <button
+                  class="gallery-thumbnail"
+                  type="button"
+                  data-image="./img/tsunami/comparaison-modeles.png"
+                  data-alt-fr="Tableau comparatif des modèles et méthodes d'échantillonnage"
+                  data-alt-en="Comparison table of models and sampling methods"
+                  data-caption-key="gallery.caption2"
+                  aria-label="Afficher la comparaison des modèles"
+                  data-i18n-aria="gallery.button2Aria"
+                >
+                  <img src="./img/tsunami/comparaison-modeles.png" alt="">
+                </button>
+
+                <button
+                  class="gallery-thumbnail"
+                  type="button"
+                  data-image="./img/tsunami/correlation-cible.png"
+                  data-alt-fr="Corrélation des variables avec la cible tsunami"
+                  data-alt-en="Correlation of features with the tsunami target"
+                  data-caption-key="gallery.caption3"
+                  aria-label="Afficher les corrélations avec la cible"
+                  data-i18n-aria="gallery.button3Aria"
+                >
+                  <img src="./img/tsunami/correlation-cible.png" alt="">
+                </button>
+
+                <button
+                  class="gallery-thumbnail"
+                  type="button"
+                  data-image="./img/tsunami/matrice-confusion.png"
+                  data-alt-fr="Matrice de confusion du modèle"
+                  data-alt-en="Model confusion matrix"
+                  data-caption-key="gallery.caption4"
+                  aria-label="Afficher la matrice de confusion"
+                  data-i18n-aria="gallery.button4Aria"
+                >
+                  <img src="./img/tsunami/matrice-confusion.png" alt="">
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section id="lessons" class="content-section">
+            <p class="section-number">06</p>
+
+            <h2 data-i18n="lessons.title">Ce que ce projet démontre</h2>
+
+            <p data-i18n="lessons.text">
+              Au-delà du modèle, ce projet met en avant ma capacité à construire une démarche
+              expérimentale complète, à identifier les pièges d'un jeu de données déséquilibré
+              et à transformer des résultats techniques en conclusions compréhensibles et argumentées.
+            </p>
+
+            <ul class="lessons-list">
+              <li data-i18n="lessons.item1">Analyser un problème de classification rare sans se laisser tromper par l'accuracy</li>
+              <li data-i18n="lessons.item2">Mettre en place et comparer plusieurs stratégies de rééquilibrage</li>
+              <li data-i18n="lessons.item3">Benchmarker plusieurs familles de modèles avec des métriques par classe</li>
+              <li data-i18n="lessons.item4">Interpréter une matrice de confusion et expliciter les compromis du modèle</li>
+            </ul>
+
+            <div class="limitations-box">
+              <span data-i18n="lessons.limitLabel">Périmètre de la démonstration</span>
+              <p data-i18n="lessons.limitText">
+                Le modèle classe des événements à partir de données sismiques. Il ne modélise pas les mécanismes physiques nécessaires à une prévision opérationnelle de tsunami.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-project">
+      <div class="project-container">
+        <a href="stephen-curry.html" class="next-project-link">
+          <span data-i18n="next.label">Projet suivant</span>
+          <strong data-i18n="next.title">Stephen Curry & le tir à trois points</strong>
+          <span class="next-arrow">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="project-footer">
+    <div class="project-container project-footer-inner">
+      <p>© <span id="year"></span> Quentin Wendling</p>
+      <a href="../../index.html#projects" data-i18n="footer.back">Retour aux projets ↑</a>
+    </div>
+  </footer>
+  <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="./js/tsunami-prediction.js"></script>
+</body>
+</html>

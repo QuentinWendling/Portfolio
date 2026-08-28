@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3J0PYDHEY"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z3J0PYDHEY');
+  </script>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>MAP collaborative — Quentin Wendling</title>
+
+  <meta
+    name="description"
+    content="Étude de cas du projet MAP collaborative développé par Quentin Wendling avec HTML, CSS, JavaScript, PHP et SQL."
+  >
+
+  <meta name="theme-color" content="#070b14">
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23050b18%22/><path d=%22M18 26 Q50 12 82 26%22 fill=%22none%22 stroke=%22%230078ff%22 stroke-width=%226%22 stroke-linecap=%22round%22/><text x=%2250%22 y=%2268%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%230078ff%22 font-family=%22Arial, sans-serif%22 letter-spacing=%22-3%22>QW</text></svg>"
+  >
+
+  <link
+    href="../vendor/swiper/swiper-bundle.min.css"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/styles.css"
+  >
+
+  <script>
+    const savedTheme = localStorage.getItem("portfolio-theme");
+
+    if (savedTheme) {
+      document.documentElement.dataset.theme = savedTheme;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <!-- En-tête -->
+  <header class="project-header">
+    <div class="project-header-inner">
+
+      <a
+        href="../../index.html"
+        class="project-logo"
+        aria-label="Retour à l'accueil"
+      >
+        <span class="project-logo-mark">QW</span>
+        <span>Quentin Wendling</span>
+      </a>
+
+      <nav class="project-header-actions">
+        <a
+          href="../../index.html#projects"
+          class="header-back-link"
+          data-i18n="nav.projects"
+        >
+          Projets
+        </a>
+
+        <button
+          class="language-toggle"
+          type="button"
+          aria-label="Switch website to English"
+        >
+          EN
+        </button>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Changer le thème"
+        >
+          <span class="theme-icon" aria-hidden="true">☼</span>
+        </button>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- Introduction -->
+    <section class="project-hero">
+      <div class="project-container">
+
+        <a
+          href="../../index.html#projects"
+          class="back-link"
+          data-i18n="project.back"
+        >
+          ← Retour aux projets
+        </a>
+
+        <div class="project-hero-grid">
+
+          <div class="project-hero-content">
+
+            <p
+              class="project-eyebrow"
+              data-i18n="project.category"
+            >
+              Développement web · Projet académique
+            </p>
+
+            <h1 data-i18n="project.title">
+              MAP collaborative
+            </h1>
+
+            <p
+              class="project-introduction"
+              data-i18n="project.introduction"
+            >
+              Ma première application web full-stack : une plateforme
+              collaborative permettant aux utilisateurs de créer un compte,
+              se connecter et partager des informations sur une carte
+              interactive.
+            </p>
+
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>PHP</span>
+              <span>SQL</span>
+            </div>
+
+            <div class="project-actions">
+
+              <!-- Remplace l’URL par celle du dépôt -->
+              <a
+                href="https://github.com/QuentinWendling/Projet_Web"
+                class="button button-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="project.github"
+              >
+                Voir le code sur GitHub
+              </a>
+
+              <a
+                href="#case-study"
+                class="button button-secondary"
+                data-i18n="project.caseStudy"
+              >
+                Découvrir le projet
+              </a>
+
+            </div>
+          </div>
+
+          <aside class="project-metadata">
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.period">Période</span>
+              <strong>2022 — 2023</strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.context">Contexte</span>
+              <strong data-i18n="metadata.contextValue">
+                Projet universitaire
+              </strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.role">Rôle</span>
+              <strong data-i18n="metadata.roleValue">
+                Développement full-stack
+              </strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.type">Type</span>
+              <strong data-i18n="metadata.typeValue">
+                Application collaborative
+              </strong>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Image principale -->
+    <section class="project-cover">
+      <div class="project-container">
+        <figure class="project-cover-frame swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./img/map/Taff-1.png" alt="Aperçu de l'application MAP collaborative">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/map/Taff-2.png" alt="Aperçu de l'application MAP collaborative">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/map/Taff-3.png" alt="Aperçu de l'application MAP collaborative">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </figure>
+      </div>
+    </section>
+
+
+    <!-- Étude de cas -->
+    <section id="case-study" class="case-study">
+      <div class="project-container case-study-grid">
+
+        <aside class="case-study-navigation">
+          <p data-i18n="summary.title">Sommaire</p>
+
+          <nav>
+            <a href="#context" data-i18n="summary.context">
+              Le contexte
+            </a>
+
+            <a href="#objective" data-i18n="summary.objective">
+              L'objectif
+            </a>
+
+            <a href="#solution" data-i18n="summary.solution">
+              La solution
+            </a>
+
+            <a href="#architecture" data-i18n="summary.architecture">
+              Architecture
+            </a>
+
+            <a href="#gallery" data-i18n="summary.gallery">
+              Galerie
+            </a>
+
+            <a href="#lessons" data-i18n="summary.lessons">
+              Enseignements
+            </a>
+          </nav>
+        </aside>
+
+
+        <div class="case-study-content">
+
+          <section id="context" class="content-section">
+            <p class="section-number">01</p>
+
+            <h2 data-i18n="context.title">
+              Le contexte
+            </h2>
+
+            <p data-i18n="context.p1">
+              MAP collaborative est mon premier projet académique utilisant
+              PHP et une base de données SQL. L'objectif était de concevoir
+              une application web complète et fonctionnelle, allant de
+              l'interface utilisateur jusqu'à la gestion des données.
+            </p>
+
+            <p data-i18n="context.p2">
+              Le projet devait notamment intégrer une authentification,
+              plusieurs pages dynamiques et des fonctionnalités
+              collaboratives autour d'une carte.
+            </p>
+          </section>
+
+
+          <section id="objective" class="content-section">
+            <p class="section-number">02</p>
+
+            <h2 data-i18n="objective.title">
+              L'objectif
+            </h2>
+
+            <div class="objective-grid">
+
+              <article class="objective-card">
+                <span>01</span>
+
+                <h3 data-i18n="objective.card1Title">
+                  Créer un compte
+                </h3>
+
+                <p data-i18n="objective.card1Text">
+                  Permettre aux utilisateurs de s'inscrire et de disposer
+                  d'un espace personnel.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>02</span>
+
+                <h3 data-i18n="objective.card2Title">
+                  Sécuriser l'accès
+                </h3>
+
+                <p data-i18n="objective.card2Text">
+                  Mettre en place une connexion et contrôler les différentes
+                  sessions utilisateur.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>03</span>
+
+                <h3 data-i18n="objective.card3Title">
+                  Collaborer
+                </h3>
+
+                <p data-i18n="objective.card3Text">
+                  Ajouter, consulter et partager des informations depuis une
+                  carte commune.
+                </p>
+              </article>
+
+            </div>
+          </section>
+
+
+          <section id="solution" class="content-section">
+            <p class="section-number">03</p>
+
+            <h2 data-i18n="solution.title">
+              La solution développée
+            </h2>
+
+            <p data-i18n="solution.text">
+              J'ai développé une application full-stack structurée autour
+              d'une interface web, d'un backend PHP et d'une base de données
+              SQL. Les pages communiquent avec le serveur afin d'enregistrer
+              les comptes, vérifier les connexions et récupérer les
+              informations affichées sur la carte.
+            </p>
+
+            <div class="feature-list">
+
+              <div class="feature-item">
+                <span class="feature-icon">01</span>
+
+                <div>
+                  <h3 data-i18n="solution.feature1Title">
+                    Authentification
+                  </h3>
+
+                  <p data-i18n="solution.feature1Text">
+                    Création de compte, connexion, gestion des sessions et
+                    vérification des informations.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">02</span>
+
+                <div>
+                  <h3 data-i18n="solution.feature2Title">
+                    Données dynamiques
+                  </h3>
+
+                  <p data-i18n="solution.feature2Text">
+                    Enregistrement et récupération des informations depuis
+                    une base de données relationnelle.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">03</span>
+
+                <div>
+                  <h3 data-i18n="solution.feature3Title">
+                    Expérience utilisateur
+                  </h3>
+
+                  <p data-i18n="solution.feature3Text">
+                    Conception d'une interface accessible, cohérente et
+                    adaptée aux différentes étapes du parcours utilisateur.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <section id="architecture" class="content-section">
+            <p class="section-number">04</p>
+
+            <h2 data-i18n="architecture.title">
+              Architecture technique
+            </h2>
+
+            <div class="architecture-diagram">
+
+              <div class="architecture-block">
+                <span>Frontend</span>
+                <strong>HTML · CSS · JavaScript</strong>
+                <p data-i18n="architecture.frontend">
+                  Interface, formulaires et interactions utilisateur
+                </p>
+              </div>
+
+              <span class="architecture-arrow">→</span>
+
+              <div class="architecture-block">
+                <span>Backend</span>
+                <strong>PHP</strong>
+                <p data-i18n="architecture.backend">
+                  Logique applicative, sessions et traitements
+                </p>
+              </div>
+
+              <span class="architecture-arrow">→</span>
+
+              <div class="architecture-block">
+                <span>Database</span>
+                <strong>SQL</strong>
+                <p data-i18n="architecture.database">
+                  Comptes, contenus et informations de la carte
+                </p>
+              </div>
+
+            </div>
+          </section>
+
+
+          <section id="gallery" class="content-section">
+            <p class="section-number">05</p>
+
+            <h2 data-i18n="gallery.title">
+              Galerie du projet
+            </h2>
+
+            <div class="project-gallery">
+
+              <figure class="gallery-main">
+                <img
+                  id="gallery-main-image"
+                  src="./img/map/Taff-1.png"
+                  alt="Page de connexion de MAP collaborative"
+                >
+              </figure>
+
+              <div class="gallery-thumbnails">
+
+                <button
+                  class="gallery-thumbnail active"
+                  type="button"
+                  data-image="./img/map/Taff-1.png"
+                  data-alt="Page de connexion de MAP collaborative"
+                  aria-label="Afficher la page de connexion"
+                >
+                  <img
+                    src="./img/map/Taff-1.png"
+                    alt=""
+                  >
+                </button>
+
+                <button
+                  class="gallery-thumbnail"
+                  type="button"
+                  data-image="./img/map/Taff-2.png"
+                  data-alt="Carte de l'application collaborative"
+                  aria-label="Afficher la carte"
+                >
+                  <img
+                    src="./img/map/Taff-2.png"
+                    alt=""
+                  >
+                </button>
+
+                <button
+                  class="gallery-thumbnail"
+                  type="button"
+                  data-image="./img/map/Taff-3.png"
+                  data-alt="Interface de MAP collaborative"
+                  aria-label="Afficher l'interface"
+                >
+                  <img
+                    src="./img/map/Taff-3.png"
+                    alt=""
+                  >
+                </button>
+
+              </div>
+            </div>
+          </section>
+
+
+          <section id="lessons" class="content-section">
+            <p class="section-number">06</p>
+
+            <h2 data-i18n="lessons.title">
+              Ce que ce projet m'a appris
+            </h2>
+
+            <p data-i18n="lessons.text">
+              Ce premier projet full-stack m'a permis de comprendre comment
+              les différentes couches d'une application communiquent entre
+              elles. Il m'a également appris à structurer une base de données,
+              gérer des sessions et transformer un besoin fonctionnel en une
+              application utilisable.
+            </p>
+
+            <ul class="lessons-list">
+              <li data-i18n="lessons.item1">
+                Concevoir une application de bout en bout
+              </li>
+
+              <li data-i18n="lessons.item2">
+                Relier une interface web à un backend PHP
+              </li>
+
+              <li data-i18n="lessons.item3">
+                Modéliser et interroger une base SQL
+              </li>
+
+              <li data-i18n="lessons.item4">
+                Organiser le code et les différentes responsabilités
+              </li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Projet suivant -->
+    <section class="next-project">
+      <div class="project-container">
+
+        <a
+          href="societe-generale-assurances-data-stage.html"
+          class="next-project-link"
+        >
+          <span data-i18n="next.label">Projet suivant</span>
+
+          <strong data-i18n="next.title">
+            MAP collaborative
+          </strong>
+
+          <span class="next-arrow">→</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="project-footer">
+    <div class="project-container project-footer-inner">
+
+      <p>
+        © <span id="year"></span> Quentin Wendling
+      </p>
+
+      <a
+        href="../../index.html#projects"
+        data-i18n="footer.back"
+      >
+        Retour aux projets ↑
+      </a>
+
+    </div>
+  </footer>
+
+  <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="./js/project-page-map-collaborative.js"></script>
+</body>
+</html>

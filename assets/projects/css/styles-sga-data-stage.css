@@ -1,0 +1,661 @@
+/*
+  Styles spécifiques à la page de stage Data / Data Science.
+  Ce fichier est volontairement séparé de styles.css afin de ne pas modifier
+  le rendu des autres projets du portfolio.
+*/
+
+.data-stage-cover {
+  height: clamp(520px, 60vw, 700px);
+  padding: 18px;
+}
+
+.data-workbench {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 23px;
+  background: var(--surface-2);
+}
+
+.data-workbench-toolbar {
+  min-height: 64px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+}
+
+.data-workbench-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.data-workbench-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--vert-eclatant);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--vert-eclatant) 12%, transparent);
+}
+
+.data-workbench-badges {
+  display: flex;
+  gap: 7px;
+}
+
+.data-workbench-badges span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue-light);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.data-workbench-body {
+  min-height: 0;
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 235px;
+}
+
+.data-pipeline {
+  min-width: 0;
+  min-height: 0;
+  padding: 42px 28px;
+  display: grid;
+  grid-template-columns: minmax(145px, 1fr) 34px minmax(145px, 1fr) 34px minmax(145px, 1fr) 34px minmax(145px, 1fr);
+  /* Toutes les cartes partagent la hauteur de la plus grande sans étirer
+     la ligne sur toute la hauteur disponible du workbench. */
+  align-items: stretch;
+  align-content: center;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(0, 120, 255, 0.11), transparent 52%);
+  background-size: 38px 38px, 38px 38px, auto;
+}
+
+.data-pipeline-step {
+  position: relative;
+  min-height: 270px;
+  padding: 22px 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.data-pipeline-step.active {
+  transform: translateY(-7px);
+  border-color: color-mix(in srgb, var(--blue) 55%, var(--line));
+  background: color-mix(in srgb, var(--blue) 6%, var(--surface));
+  box-shadow: 0 22px 55px rgba(0, 120, 255, 0.14);
+}
+
+.data-step-index {
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.data-step-icon {
+  width: 42px;
+  height: 42px;
+  margin: 23px 0 19px;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--blue) 35%, var(--line));
+  border-radius: 13px;
+  background: var(--blue-soft);
+  color: var(--blue-light);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.data-pipeline-step:nth-of-type(3) .data-step-icon,
+.data-pipeline-step:nth-of-type(4) .data-step-icon {
+  border-color: color-mix(in srgb, var(--vert-eclatant) 35%, var(--line));
+  background: color-mix(in srgb, var(--vert-eclatant) 8%, var(--surface));
+  color: var(--vert-eclatant);
+}
+
+.data-pipeline-step > p {
+  margin: 0 0 7px;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.data-pipeline-step strong {
+  display: block;
+  min-height: 46px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.data-pipeline-step ul {
+  margin: 17px 0 0;
+  padding: 15px 0 0;
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.data-pipeline-step li {
+  position: relative;
+  padding-left: 13px;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.data-pipeline-step li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--blue-light);
+}
+
+.data-pipeline-connector {
+  position: relative;
+  height: 2px;
+  align-self: center;
+  overflow: visible;
+  background: color-mix(in srgb, var(--blue) 45%, var(--line));
+}
+
+.data-pipeline-connector::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  box-shadow: 0 0 10px rgba(0, 120, 255, 0.75);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+/*
+ * Un seul collecteur est animé à la fois.
+ * Le JavaScript déplace la classe .stream-active d'un connecteur au suivant,
+ * ce qui donne une lecture continue du pipeline de gauche à droite.
+ */
+.data-pipeline-connector.stream-active::after {
+  opacity: 1;
+  animation: data-stream 1.35s linear forwards;
+}
+
+@keyframes data-stream {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+.data-workbench-panel {
+  padding: 23px 20px;
+  display: flex;
+  flex-direction: column;
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+}
+
+.data-panel-label {
+  margin: 0 0 25px;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.data-panel-metric {
+  padding: 0 0 22px;
+}
+
+.data-panel-metric + .data-panel-metric {
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.data-panel-metric span,
+.data-panel-principle span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.data-panel-metric strong {
+  display: block;
+  margin-top: 3px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.data-progress {
+  height: 5px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-3);
+}
+
+.data-progress i {
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), var(--vert-eclatant));
+}
+
+.data-panel-principle {
+  margin-top: auto;
+  padding: 17px;
+  border: 1px solid color-mix(in srgb, var(--vert-eclatant) 30%, var(--line));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--vert-eclatant) 7%, var(--surface));
+}
+
+.data-panel-principle strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--vert-eclatant);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.confidentiality-callout,
+.architecture-note {
+  margin-top: 32px;
+  padding: 21px 22px;
+  border: 1px solid color-mix(in srgb, var(--blue) 28%, var(--line));
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--blue) 5%, var(--surface));
+}
+
+.confidentiality-callout > span,
+.architecture-note > span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--blue-light);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.confidentiality-callout p,
+.architecture-note p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 14px;
+}
+
+.evaluation-scope {
+  margin-top: 40px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface);
+}
+
+.evaluation-scope-heading > span {
+  display: block;
+  color: var(--vert-eclatant);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.evaluation-scope-heading > strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 19px;
+}
+
+.evaluation-grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.evaluation-grid article {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-2);
+}
+
+.evaluation-grid article > span {
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.evaluation-grid article > strong {
+  display: block;
+  margin-top: 20px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.evaluation-grid article > p {
+  margin: 8px 0 0;
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.tech-stack-card {
+  margin-top: 38px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface);
+}
+
+.tech-stack-card > span {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tech-stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-stack-list span {
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.data-architecture-diagram {
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.data-architecture-block {
+  min-height: 245px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+.data-architecture-block > span {
+  color: var(--blue-light);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.data-architecture-block strong {
+  display: block;
+  margin-top: 34px;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.data-architecture-block p {
+  margin: 13px 0 0;
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+.data-architecture-arrow {
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 18px;
+}
+
+.data-stage-result-metrics strong {
+  font-size: clamp(27px, 3.7vw, 44px);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1100px) {
+  .data-workbench-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .data-panel-label,
+  .data-panel-principle {
+    grid-column: 1 / -1;
+  }
+
+  .data-panel-metric + .data-panel-metric {
+    padding-top: 0;
+    border-top: 0;
+  }
+  
+  .data-workbench-body {
+    grid-template-columns: 1fr;
+  }
+
+  .evaluation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .data-stage-cover {
+    height: auto;
+  }
+
+  /* Vue tablette / intermédiaire : on conserve les 4 étapes sur une ligne.
+     Les cartes deviennent simplement plus compactes au lieu de s'empiler. */
+  .data-workbench {
+    min-height: 0;
+  }
+
+  .data-pipeline {
+    padding: 28px 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    grid-template-columns:
+      minmax(118px, 1fr) 18px
+      minmax(118px, 1fr) 18px
+      minmax(118px, 1fr) 18px
+      minmax(118px, 1fr);
+  }
+
+  .data-pipeline-step {
+    min-height: 260px;
+    padding: 19px 14px;
+  }
+
+  .data-step-icon {
+    margin: 18px 0 16px;
+  }
+
+  .data-pipeline-step strong {
+    min-height: 42px;
+    font-size: 14px;
+  }
+
+  .data-pipeline-step li {
+    font-size: 10px;
+  }
+
+  .data-architecture-diagram { /* voir différence*/
+    grid-template-columns: 1fr 28px 1fr;
+    row-gap: 18px;
+  }
+
+  .data-architecture-diagram {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+
+
+  .data-architecture-arrow,
+  .data-architecture-arrow:nth-of-type(2),
+  .data-architecture-arrow:nth-of-type(3) {
+    display: block;
+    grid-column: auto;
+    text-align: center;
+    transform: rotate(90deg);
+  }
+
+  .data-architecture-block,
+  .data-architecture-block:nth-of-type(3),
+  .data-architecture-block:nth-of-type(4) {
+    grid-column: auto;
+  }
+}
+
+/* Passage en pipeline vertical uniquement lorsque la largeur devient réellement
+   mobile. gap: 0 garantit que chaque connecteur touche les deux cartes. */
+@media (max-width: 680px) {
+  .data-pipeline {
+    padding: 22px 16px;
+    grid-template-columns: 1fr;
+    gap: 0;
+    align-items: stretch;
+    overflow: visible;
+  }
+
+  .data-pipeline-step {
+    min-height: 0;
+    padding: 20px 18px;
+  }
+
+  /* Le déplacement vertical de la carte active créerait visuellement un espace
+     avec le connecteur ; en mobile l'état actif repose sur bordure/fond/ombre. */
+  .data-pipeline-step.active {
+    transform: none;
+  }
+
+  .data-pipeline-step strong {
+    min-height: 0;
+  }
+
+  .data-pipeline-connector {
+    width: 2px;
+    height: 32px;
+    align-self: auto;
+    justify-self: center;
+  }
+
+  .data-pipeline-connector::after {
+    top: 0;
+    left: 50%;
+  }
+
+  .data-pipeline-connector.stream-active::after {
+    animation-name: data-stream-mobile;
+  }
+
+  .data-workbench-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .data-panel-label,
+  .data-panel-principle {
+    grid-column: auto;
+  }
+
+  .data-panel-metric + .data-panel-metric {
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+}
+
+@keyframes data-stream-mobile {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .data-stage-cover {
+    padding: 10px;
+  }
+
+  .data-workbench-toolbar {
+    padding: 0 14px;
+  }
+
+  .data-workbench-badges span:nth-child(2) {
+    display: none;
+  }
+
+  .data-pipeline {
+    padding: 20px 14px;
+  }
+
+  .data-workbench-panel {
+    padding: 20px 16px;
+  }
+
+  .tech-stack-card,
+  .confidentiality-callout,
+  .architecture-note {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .data-pipeline-connector::after {
+    animation: none;
+  }
+
+  .data-pipeline-step {
+    transition: none;
+  }
+}
