@@ -280,7 +280,13 @@ img { display: block; max-width: 100%; }
 .project-card:hover .project-visual img {
     transform: scale(1.03);
 }
-.project-body { padding: 20px 24px 25px; }
+.project-body {
+  padding: 20px 24px 25px;
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 .project-type { color: var(--bleu); margin: 0 0 8px; text-transform: uppercase; letter-spacing: .1em; font-size: .65rem; font-weight: 850; }
 .project-body h3 { font-size: 1.35rem; margin: 0; letter-spacing: -.03em; }
 .project-body > p:not(.project-type) { margin: 12px 0 17px; color: var(--muted); font-size: .89rem; }
@@ -468,7 +474,8 @@ img { display: block; max-width: 100%; }
 }
 
 .project-card-link {
-  display: block;
+  display: flex;
+  flex-direction: column;
   color: inherit;
   text-decoration: none;
   cursor: pointer;
@@ -506,7 +513,7 @@ img { display: block; max-width: 100%; }
 .project-cta {
   display: block;
   text-align: right;
-
+  margin-top: auto;
   color: #3b82f6;
   font-weight: 600;
   font-size: 0.95rem;
