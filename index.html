@@ -1,781 +1,595 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="fr" data-theme="dark">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3J0PYDHEY"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3J0PYDHEY"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'G-Z3J0PYDHEY');
-    </script>
+  gtag('config', 'G-Z3J0PYDHEY');
+  </script>
 
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>PortFolio</title>
-    <meta content="Portfolio de Quentin WENDLING — BUT Informatique (AGED), projets, compétences et parcours." name="description" />
-    <meta content="Portfolio, Informatique, AGED, Développement, Data, Quentin Wendling" name="keywords" />
-
-    <!-- Vendor CSS Files DE-->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-
-    <!-- Template Main CSS File -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-    <link href="assets/css/style.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio de Quentin Wendling, Data Scientist & Data Analyst spécialisé en NLP, machine learning et systèmes décisionnels.">
+  <meta name="theme-color" content="#070b14">
+  <meta property="og:title" content="Quentin Wendling — Data Scientist & Data Analyst">
+  <meta property="og:description" content="NLP, machine learning, data pipelines et analyse décisionnelle.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/profile-000.png">
+  <title>Quentin Wendling — Data Scientist & Data Analyst</title>
+  <link
+  rel="icon"
+  href="data:image/svg+xml,
+  <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
+    <rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23050b18%22/>
+    <path d=%22M18 26 Q50 12 82 26%22 fill=%22none%22 stroke=%22%230078ff%22 stroke-width=%226%22 stroke-linecap=%22round%22/>
+    <text x=%2250%22 y=%2268%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%230078ff%22 font-family=%22Arial, sans-serif%22 letter-spacing=%22-3%22>QW</text>
+  </svg>">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="styles.css">
 </head>
+<body id="top">
+  <a class="skip-link" href="#main">Aller au contenu</a>
 
-<body>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="orb orb-one" aria-hidden="true"></div>
+  <div class="orb orb-two" aria-hidden="true"></div>
 
-<header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-        <h1 class="logo"><a style="text-decoration:none" href="#fond">PortFolio</a></h1>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Navigation principale">
+      <a class="brand" href="#top" aria-label="Accueil">
+        <span class="brand-mark">QW</span>
+        <span class="brand-name">Quentin Wendling</span>
+      </a>
 
-        <nav id="navbar" class="navbar">
-            <ul>
-                <li><a class="nav-link scrollto active" href="#fond">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">Présentation</a></li>
-                <li><a class="nav-link scrollto" href="#formation">Formation</a></li>
-                <li><a class="nav-link scrollto" href="#work">PortFolio</a></li>
-                <li>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Ouvrir le menu</span>
+      </button>
 
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!-- .navbar -->
-    </div>
-</header>
+      <div class="nav-links" id="nav-links">
+        <a href="#about" data-i18n="nav.about">À propos</a>
+        <a href="#experience" data-i18n="nav.experience">Expérience</a>
+        <a href="#projects" data-i18n="nav.projects">Projets</a>
+        <a href="#skills" data-i18n="nav.skills">Compétences</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
 
-<!-- ======= Hero Section ======= -->
-<div id="fond" class="hero route bg-image" style="background-image: url(assets/img/fond-login.jpg)">
-    <div class="overlay-itro"></div>
-    <div class="hero-content display-table">
-        <div class="table-cell">
-            <div class="container">
-                <h1 class="hero-title mb-4">Portfolio Quentin WENDLING</h1>
-                <p class="hero-subtitle">
-                <p class="display-6 color-d">Master Informatique</p>
-                </p>
-            </div>
+      <div class="nav-actions">
+        <button class="icon-button language-toggle" type="button" aria-label="Passer le site en anglais">EN</button>
+        <button class="icon-button theme-toggle" type="button" aria-label="Changer de thème">
+          <span class="theme-icon" aria-hidden="true">☼</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero shell section">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span><span data-i18n="hero.availability">Disponible à partir d'octobre 2026</span></div>
+        <p class="hero-kicker" data-i18n="hero.kicker">Data Scientist · Data Analyst · NLP</p>
+        <h1>
+          <span data-i18n="hero.titleLine1">Transformer</span>
+          <span data-i18n="hero.titleLine2">les données en</span>
+          <span class="gradient-text" data-i18n="hero.titleLine3">
+          décisions utiles.
+          </span>
+        </h1>
+        <p class="hero-lead" data-i18n="hero.lead">
+          Je conçois des pipelines NLP, des modèles de machine learning et des analyses capables de convertir des données complexes en résultats compréhensibles et actionnables.
+        </p>
+        <div class="hero-cta">
+          <a class="button primary" href="#projects">
+            <span data-i18n="hero.ctaProjects">Voir mes projets</span><span aria-hidden="true">↗</span>
+          </a>
+          <a class="button secondary" href="assets/cv-en.pdf" target="_blank" rel="noopener">
+            <span data-i18n="hero.ctaResume">Consulter mon CV</span><span aria-hidden="true">↓</span>
+          </a>
         </div>
-    </div>
-</div>
-<!-- End Hero Section -->
-
-<main id="main">
-    <!-- ======= About Section ======= -->
-    <section class="about-mf sect-pt4 route">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="box-shadow-full" id="about">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-5">
-                                        <div class="about-img">
-                                            <img src="assets/img/profil.jpg" class="img-fluid rounded b-shadow-a" alt="Photo de profil"/>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-7">
-                                        <div class="about-info">
-                                            <p>
-                                                <span class="title-s">Nom: </span>
-                                                <span>Quentin WENDLING</span>
-                                            </p>
-                                            <p>
-                                                <span class="title-s">Profil: </span>
-                                                <span>Étudiant en Master Informatique – Parcours Données, Connaissances et Intelligence (DCI).
-                                                    </br>
-                                                    Curieux et passionné par la data, l’intelligence artificielle, mais aussi par le sport (musculation) et les échecs.
-                                                </span>
-                                            </p>
-                                            <p>
-                                                <span class="title-s">Email: </span>
-                                                <span>wendlingqn@gmail.com</span>
-                                            </p>
-                                            <p>
-                                                <a href="https://www.linkedin.com/in/quentin-wendling-413a5125a">
-                                                    <img src="assets/img/linkedin.png" alt="">
-                                                </a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-mf">
-                                    <p class="title-s">Compétences informatiques</p>
-                                    <span>Python (Data Science, IA)</span> <span class="pull-right">95%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width: 95%"
-                                                aria-valuenow="95"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                    <span>SQL/PLSQL</span> <span class="pull-right">90%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width: 90%"
-                                                aria-valuenow="90"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                    <span>Machine Learning / Deep Learning / LLM (TensorFlow, Scikit-learn, Keras)</span> <span class="pull-right">85%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width: 85%"
-                                                aria-valuenow="85"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                    <span>Data Visualization (Matplotlib, Seaborn, Power BI)</span> <span class="pull-right">80%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width: 80%"
-                                                aria-valuenow="80"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                    <span>R (Analyse statistique)</span> <span class="pull-right">75%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width: 75%"
-                                                aria-valuenow="75"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-
-                                    <span>HTML/CSS/JS</span> <span class="pull-right">80%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width: 80%"
-                                                aria-valuenow="80"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                    <span>PHP</span> <span class="pull-right">65%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width: 65%"
-                                                aria-valuenow="65"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                    <span>JAVA</span>
-                                    <span class="pull-right">85%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width: 85%"
-                                                aria-valuenow="85"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                    <span>C++</span>
-                                    <span class="pull-right">45%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width:45%"
-                                                aria-valuenow="45"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                    <span>VB</span>
-                                    <span class="pull-right">85%</span>
-                                    <div class="progress">
-                                        <div
-                                                class="progress-bar"
-                                                role="progressbar"
-                                                style="width:85%"
-                                                aria-valuenow="85"
-                                                aria-valuemin="0"
-                                                aria-valuemax="100"
-                                        ></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="about-me pt-4 pt-md-0">
-                                    <div class="title-box-2">
-                                        <h5 class="title-left">Présentation</h5>
-                                    </div>
-                                    <p class="lead">
-                                        Je suis Quentin WENDLING, actuellement étudiant en deuxième année de Master Informatique – parcours Données, Connaissances et Intelligence (DCI) à l’Université Paris Cité.
-                                        </br></br>
-                                        Mon parcours se concentre sur la science des données, l’apprentissage automatique et la valorisation de la connaissance, avec un fort intérêt pour la modélisation, la prédiction et la prise de décision assistée par l’IA.
-                                        </br>
-                                        Titulaire d’un BUT Informatique (parcours AGED – Administration, Gestion et Exploitation des Données) obtenu à l’IUT de Paris – Rives de Seine, j’ai acquis de solides compétences en gestion de bases de données, traitement de données massives et développement d’applications.
-                                        </br>
-                                        En parallèle, j’ai également suivi un baccalauréat en informatique à l’Université du Québec à Chicoutimi (UQAC). Cette double inscription m’a permis d'acquérir une perspective internationale tout en élargissant mes compétences dans le domaine de l'informatique.
-                                    </p>
-                                    <p class="lead">
-                                        Je suis diplômé d’un baccalauréat STI2D, option Systèmes d’Information et Numérique (SIN), qui a constitué les premières bases de mon intérêt pour les technologies de l’information et la programmation.
-                                    </p>
-                                </div>
-                                <p class="d-flex align-items-center justify-content-center"><a class="btn btn-primary btn js-scroll px-4" href="assets/doc/CV.pdf" target="blank" role="button">Accéder a mon CV</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End About Section -->
-
-                    <!-- ======= Présentation BUT ======= -->
-                    <div id="formation">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="col-sm-12">
-                            <div class="title-box text-center">
-                                <h3 class="title-a">Formation</h3>
-                                <div class="col-md-12 mb-3">
-                                    <div class="line-mf"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="title-box">
-                            <h3 class="title-left">Qu'est-ce que le Master Informatique – Données, Connaissances et Intelligence (DCI) ?</h3>
-                            <br>
-                            <p class="lead">
-                                Le Master Informatique – parcours Données, Connaissances et Intelligence (<b>DCI</b>) forme des
-                                spécialistes capables de concevoir, développer et exploiter des systèmes intelligents
-                                basés sur les données.
-                                Il s’adresse aux étudiants souhaitant se spécialiser dans les domaines de la
-                                data science, de l’intelligence artificielle et de la valorisation de la connaissance,
-                                afin de répondre aux besoins croissants des entreprises dans le traitement et l’analyse
-                                de données massives.
-                            </p>
-                            <br>
-                            <h3 class="title-right">Le Master Informatique – parcours DCI :</h3>
-                        </div>
-
-                        <div class="about">
-                            <div class="box-shadow-full">
-                                <div class="row">
-                                    <p class="lead">
-                                    <div class="title-box-2">
-                                        <h4>Parcours DCI :</h4>
-                                    </div>
-                                    <span class="addMarge">Le parcours Données, Connaissances et Intelligence (DCI) regroupe les métiers liés à
-                                    la conception, au développement et à l’exploitation de systèmes</span>
-                                        <span class="addMarge">intelligents basés sur les données.
-                                    Il vise à former des professionnels capables de transformer des volumes importants
-                                    d’informations en connaissance</span>
-                                    <span class="addMarge"> exploitable, en s’appuyant sur les techniques de la
-                                    data science, de l’intelligence artificielle et de l’apprentissage automatique.</span>
-                                    <br/>
-                                        <span class="addMarge">Les étudiants en Master Informatique parcours <b>DCI</b> :</span>
-                                    <span class="addMarge">• Appliquent des méthodes d’apprentissage automatique et de deep learning pour modéliser et résoudre des problématiques réelles.</span>
-                                    <span class="addMarge">• Manipulent et analysent de grandes volumétries de données structurées et non structurées.</span>
-                                    <span class="addMarge">• Développent des systèmes d’aide à la décision intelligents intégrant des approches statistiques et symboliques.</span>
-                                    <span class="addMarge">• Exploitent les concepts d’ingénierie des connaissances, de web sémantique et d’extraction d’information.</span>
-                                    <span class="addMarge">• Visualisent, interprètent et valorisent les résultats pour la prise de décision et l’optimisation des processus.</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="title-box">
-                            <h3 class="title-left">Qu'est ce que le BUT Informatique ?</h3>
-                            <br>
-                            <p class="lead">
-                                Le bachelor universitaire de technologie Informatique
-                                (<b>BUT Informatique</b>), s'adresse à ceux qui souhaitent se former
-                                en trois ans aux métiers analyste d’exploitation informatique, traffic manager,
-                                architecte web, administrateur de base de données, administrateur réseau,...
-                                Pour intégrer directement le monde du travail ou continuer
-                                des études, dans le domaine de l'informatique.
-                            </p>
-                            <br>
-                            <h3 class="title-right">Le BUT Informatique de l'université de Paris Cité propose trois parcours :</h3>
-                        </div>
-                        <div class="about">
-                            <div id="about2" class="box-shadow-full">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="title-box-2">
-                                            <h5 class="title-left">Parcours <b>RA</b></h5>
-                                        </div>
-                                        <p class="lead">
-                                            Le parcours réalisation d’applications : conception, développement, validation
-                                            regroupe les métiers liés à la conception,
-                                            au développement et à la réalisation technique et applicative de projets.
-                                            <br/><br/>
-                                            Les étudiant en BUT informatique parcours <b>RA</b> :
-                                            <br/>
-                                            <span class="addMarge">• Mobilise les techniques d’analyse pour développer une application
-                                        adaptée aux besoins du client</span>
-                                            <br/>
-                                            <span class="addMarge">• Adapte les solutions existantes</span>
-                                            <br/>
-                                            <span class="addMarge">• Code, débugue, teste, documente et communique sur les étapes de
-                                            développement du produit</span>
-                                            <br/>
-                                            <span class="addMarge">• Choisit les options techniques appropriées au développement comme la
-                                        réutilisation, l’amélioration ou la reconfiguration de composants existants</span>
-                                            <br/>
-                                            <span class="addMarge">• Optimise efficacité, coûts et qualité. Valide les résultats avec les
-                                         représentants des utilisateurs type, intègre et garantit la solution dans
-                                        son ensemble</span>
-                                            <br/><br/>
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="title-box-2 pt-4 pt-md-0">
-                                            <h5 class="title-left">Parcours <b>AGED</b></h5>
-                                        </div>
-                                        <p class="lead">
-                                            Le parcours administration, gestion et exploitation des données regroupe les métiers
-                                            liés à la conception et à la gestion de bases de données de grand volume.
-                                            <br/><br/>
-                                            Les étudiant en BUT informatique parcours <b>AGED</b> :
-                                            <br/>
-                                            <span class="addMarge">• Assure la politique d’accès aux données</span>
-                                            <br/>
-                                            <span class="addMarge">• Développe l’urbanisation et visualise des données</span>
-                                            <br/>
-                                            <span class="addMarge">• Veille à la qualité des échanges des données</span>
-                                            <br/>
-                                            <span class="addMarge">• Conçoit, développe et administre des bases de données, extrait des
-                                        données externes, les structure et constitue de vastes entrepôts de
-                                        données afin de concevoir et développer des applications décisionnelles</span>
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <div class="title-box-2">
-                                            <h5 class="title-left">Parcours <b>DACS</b></h5>
-                                        </div>
-                                        <p class="lead">
-                                            Le parcours déploiement d’applications communicantes et sécurisées regroupe
-                                            les métiers liés à la mise en place et à la sécurité des systèmes d’information
-                                            et des applications.
-                                            <br/><br/>
-                                            Les étudiant en BUT informatique parcours <b>DACS</b> :
-                                            <br/>
-                                            <span class="addMarge">• Installe et configure, le système d’exploitation et les outils de
-                                        développement sur un poste de travail relié au réseau</span>
-                                            <br/>
-                                            <span class="addMarge">• Configure et sécurise les services utiles à l’entreprise</span>
-                                            <br/>
-                                            <span class="addMarge">• Construit des applications sachant communiquer avec les services tout
-                                        en sécurisant les flux de données</span>
-                                            <br/>
-                                            <span class="addMarge">• Déploie une politique de sécurité, optimise et rationalise les ressources
-                                        en fonctions des besoins de l’organisation</span>
-                                            <br/>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="title-box">
-                            <h3 class="title-left">Qu'est ce que le Baccalauréat en Informatique ?</h3>
-                            <br>
-                            <p class="lead">
-                                Le Baccalauréat en Informatique est un diplôme universitaire de premier cycle conçu pour
-                                fournir une fondation solide dans les principes fondamentaux de l'informatique
-                                et des technologies de l'information. Ce cursus, qui s'étale généralement sur trois
-                                à quatre ans, combine un enseignement théorique approfondi avec une expérience pratique
-                                concrète obtenue via des projets, des travaux de laboratoire, et des stages en entreprise.
-                            </p>
-                            <br>
-                            <h3 class="title-right">Baccalauréat en Informatique: Compétences Clés et Domaines de Spécialisation</h3>
-                        </div>
-                        <div class="about">
-                            <div class="box-shadow-full">
-                                <div class="row">
-                                    <p class="lead">
-                                        <div class="title-box-2">
-                                            <h4>Le baccalauréat en Informatique permet de développé des compétences essentielles
-                                                dans divers domaines spécialisés tels que</h4>
-                                        </div>
-                                        <span class="addMarge">Programmation : Une compréhension des langages de programmation et capacité à créer des logiciels efficaces.</span>
-                                        <br/>
-                                        <span class="addMarge">Systèmes d'exploitation : Une connaissance des systèmes d'exploitation et de leur gestion pour optimiser les performances et la sécurité.</span>
-                                        <br/>
-                                        <span class="addMarge">Bases de données : Une aptitude à organiser, stocker et récupérer des données de manière efficace et sécurisée.</span>
-                                        <br/>
-                                        <span class="addMarge">Développement web et mobile : Création d'applications web et mobiles modernes et réactives.</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-meta" aria-label="Domaines clés">
+          <span>Machine Learning</span>
+          <span>NLP & LLM</span>
+          <span>Data Pipelines</span>
         </div>
+      </div>
+
+      <div class="hero-visual reveal delay-1" aria-label="Carte de présentation de Quentin Wendling">
+        <div class="profile-card">
+          <div class="profile-grid" aria-hidden="true"></div>
+          <div class="profile-topbar">
+            <span class="window-dots"><i></i><i></i><i></i></span>
+            <span class="status" data-i18n="hero.status">
+            Disponible pour travailler
+            </span>
+          </div>
+          <div class="profile-photo-wrap">
+            <div class="profile-halo"></div>
+            <img src="assets/profile-000.png" alt="Portrait de Quentin Wendling" class="profile-photo">
+          </div>
+          <div class="profile-info">
+            <p class="profile-name">Quentin Wendling</p>
+            <p class="profile-role">Data Scientist & Data Analyst</p>
+            <div class="profile-location"><span aria-hidden="true">⌖</span> Plaisir · Île-de-France</div>
+          </div>
+          <div class="mini-dashboard" aria-label="Domaines de spécialisation">
+            <div class="metric">
+              <span class="metric-label">NLP</span>
+              <strong>CamemBERT</strong>
+              <span class="spark-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">DATA</span>
+              <strong>Python + SQL</strong>
+              <span class="spark-line" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card floating-one"><span>🧠</span><strong>NLP Pipeline</strong><small>Insights automatisés</small></div>
+        <div class="floating-card floating-two"><span>↗</span><strong>ML Models</strong><small>Évaluation & impact</small></div>
+      </div>
     </section>
-</main>
-<!-- End #main -->
-<section id="work" class="portfolio-mf sect-pt4 route">
-    <div id="portfolio" class="paddsection">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="title-box text-center">
-                        <h3 class="title-a">Portfolio</h3>
-                        <div class="col-md-12 mb-3">
-                            <div class="line-mf"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="title-box text-center">
-                    <p class="lead text-muted mb-4" style="max-width: 840px; margin: 0 auto;">
-                        Voici quelques exemples de projets réalisés au cours de ma formation et de mes expériences personnelles.
-                    </p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-center">
-                        <ul id="portfolio-flters">
-                            <div id="myBtnContainer">
-                                <li class="btn123 active123" onclick="filterSelection123('all123', this)">Tout</li>
-                                <li class="btn123" onclick="filterSelection123('DevWeb', this)">Développement Web</li>
-                                <!--<li class="btn123" onclick="filterSelection123('Stage', this)">Stage</li>-->
-                                <li class="btn123" onclick="filterSelection123('Program', this)">Programmation</li>
-                                <li class="btn123" onclick="filterSelection123('DataScience', this)">Data Science</li>
-                                <li class="btn123" onclick="filterSelection123('Perso', this)">Projet personnel</li>
-                            </div>
-                        </ul>
-                    </div>
 
-                    <div class="col-md-4 column123 DevWeb">
-                        <div class="work-box">
-                            <a href="assets/img/PortFolio-1/Taff-1.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="assets/img/PortFolio-1/Taff-1.png" alt="" class="img-fluid"/>
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">MAP collaborative</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Développement Web</span> / <span class="w-date">2023</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="Taff-1.html"><span class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--
-                    <div class="col-md-4 column123 Stage">
-                        <div class="work-box">
-                            <a href="assets/img/PortFolio-2/Taff-2.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="assets/img/PortFolio-2/Taff-2.png" alt="" class="img-fluid"/>
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">CEA Grenoble</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Stage</span> / <span class="w-date">2017</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="Taff-2.html"><span class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    -->
-                    <div class="col-md-4 column123 Program">
-                        <div class="work-box">
-                            <a href="assets/img/PortFolio-5/accueil.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="assets/img/PortFolio-5/accueil.png" alt="" class="img-fluid"/>
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Démineur</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Visual Basic</span> / <span class="w-date">Mars. ~ Mai. 2022</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="Taff-5.html"><span class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <section class="trust-strip shell reveal" aria-label="Résumé du profil">
+      <div><strong>3</strong><span data-i18n="stats.experiences">expériences professionnelles</span></div>
+      <div><strong>5</strong><span data-i18n="stats.projects">projets data & IA sélectionnés</span></div>
+      <div><strong>FR / EN</strong><span data-i18n="stats.languages">environnement international</span></div>
+    </section>
 
-                    <div class="col-md-4 column123 Program">
-                        <div class="work-box">
-                            <a
-                                    href="assets/img/PortFolio-3/accueil.png"
-                                    data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox"
-                            >
-                                <div class="work-img">
-                                    <img src="assets/img/PortFolio-3/accueil.png" alt="" class="img-fluid"/>
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Démineur</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">C++</span> /
-                                            <span class="w-date"> Nov. ~  Jun. 2021-2022</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="Taff-3.html">
-                                    <span class="bi bi-plus-circle"></span
-                                    ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 column123 Program">
-                        <div class="work-box">
-                            <a
-                                    href="assets/img/PortFolio-4/acceuil.png"
-                                    data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox"
-                            >
-                                <div class="work-img">
-                                    <img src="assets/img/PortFolio-4/acceuil.png" alt="" class="img-fluid"/>
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">6 qui prend</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Java</span> /
-                                            <span class="w-date"> 2021</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="Taff-4.html">
-                                    <span class="bi bi-plus-circle"></span
-                                    ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 column123 Perso">
-                        <div class="work-box">
-                            <a
-                                    href="assets/img/PortFolio-6/snake.jpg"
-                                    data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox"
-                            >
-                                <div class="work-img">
-                                    <img src="assets/img/PortFolio-6/snake.jpg" alt="" class="img-fluid"/>
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Jeu Snake</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Développement Web</span> /
-                                            <span class="w-date">Jan. 2024</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="Taff-6.html">
-                                    <span class="bi bi-plus-circle"></span
-                                    ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 column123 DataScience">
-                        <div class="work-box">
-                            <a
-                                    href="assets/img/PortFolio-7/acceuil.png"
-                                    data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox"
-                            >
-                                <div class="work-img">
-                                    <img src="assets/img/PortFolio-7/acceuil.png" alt="" class="img-fluid"/>
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Étude de performance : Stephen Curry et le tir à trois points</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">R</span> /
-                                            <span class="w-date">Déc. 2023</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="Taff-7.html">
-                                    <span class="bi bi-plus-circle"></span
-                                    ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 column123 DataScience">
-                        <div class="work-box">
-                            <a
-                                    href="assets/img/PortFolio-8/acceuil.png"
-                                    data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox"
-                            >
-                                <div class="work-img">
-                                    <img src="assets/img/PortFolio-8/acceuil.png" alt="" class="img-fluid"/>
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Prediction de tsunami à partir de données sismiques</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">python</span> /
-                                            <span class="w-date">2024-2025</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="Taff-8.html">
-                                    <span class="bi bi-plus-circle"></span
-                                    ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 column123 DataScience">
-                        <div class="work-box">
-                            <a
-                                    href="assets/img/PortFolio-9/acceuil.png"
-                                    data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox"
-                            >
-                                <div class="work-img">
-                                    <img src="assets/img/PortFolio-9/acceuil.png" alt="" class="img-fluid"/>
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Comparaison de plusieurs approches de classification de données sociales</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">python</span> /
-                                            <span class="w-date">2025</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="Taff-9.html">
-                                    <span class="bi bi-plus-circle"></span
-                                    ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="section shell" id="about">
+      <div class="section-heading reveal">
+        <p class="section-index">01 — <span data-i18n="section.aboutLabel">À propos</span></p>
+        <h2 data-i18n="about.title">Un profil hybride entre data science, ingénierie et compréhension métier.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p data-i18n="about.p1">
+            Étudiant en Master 2 Informatique, parcours Données, Connaissances et Intelligence à l'Université Paris Cité, je travaille sur des problématiques de machine learning, de NLP et d'aide à la décision.
+          </p>
+          <p data-i18n="about.p2">
+            Mon approche couvre toute la chaîne de valeur : structuration des données, expérimentation, entraînement, évaluation, déploiement et restitution des résultats auprès des équipes métier.
+          </p>
         </div>
+        <div class="principles reveal delay-1">
+          <article>
+            <span>01</span>
+            <div><h3 data-i18n="about.card1Title">Problème avant modèle</h3><p data-i18n="about.card1Text">Comprendre le besoin, les contraintes et les critères de succès avant de choisir une méthode.</p></div>
+          </article>
+          <article>
+            <span>02</span>
+            <div><h3 data-i18n="about.card2Title">Résultats interprétables</h3><p data-i18n="about.card2Text">Privilégier des analyses compréhensibles, mesurables et utilisables par les décideurs.</p></div>
+          </article>
+          <article>
+            <span>03</span>
+            <div><h3 data-i18n="about.card3Title">Vision end-to-end</h3><p data-i18n="about.card3Text">Construire des workflows robustes, reproductibles et maintenables au-delà du prototype.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="experience">
+      <div class="section-heading reveal">
+        <p class="section-index">02 — <span data-i18n="section.experienceLabel">Expérience</span></p>
+        <h2 data-i18n="experience.title">Des projets appliqués, de la donnée brute jusqu'à l'usage métier.</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-date"><span data-i18n="experience.sgDate">Avril — Sept. 2026</span><small data-i18n="experience.ongoing">En cours</small></div>
+          <div class="timeline-line"><span></span></div>
+          <div class="timeline-content">
+            <div class="timeline-heading">
+              <div><h3 data-i18n="experience.sgRole">Data Analyst & Data Scientist — Stage</h3><p>Société Générale Assurances · La Défense</p></div>
+              <span class="tag accent">NLP</span>
+            </div>
+            <p data-i18n="experience.sgSummary">Développement d'un pipeline NLP de bout en bout pour automatiser l'analyse des évaluations de formation et produire des insights métier.</p>
+            <ul>
+              <li data-i18n="experience.sg1">Automatisation du traitement des évaluations via des pipelines Python.</li>
+              <li data-i18n="experience.sg2">Dashboards de suivi des KPI, CSAT et tendances de feedback.</li>
+              <li data-i18n="experience.sg3">Clustering des commentaires, génération de labels avec Gemma 2B-IT et classification CamemBERT.</li>
+            </ul>
+            <div class="stack"><span>Python</span><span>CamemBERT</span><span>Gemma</span><span>Clustering</span><span>KPI</span></div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-date"><span data-i18n="experience.gcfDate">Avril — Juin 2024</span></div>
+          <div class="timeline-line"><span></span></div>
+          <div class="timeline-content">
+            <div class="timeline-heading">
+              <div><h3 data-i18n="experience.gcfRole">Data Science & Simulation industrielle — Stage</h3><p>Groupe Conseil Filion · Québec, Canada</p></div>
+              <span class="tag">Optimisation</span>
+            </div>
+            <p data-i18n="experience.gcfSummary">Analyse et optimisation des flux d'une chaîne de production industrielle grâce à la simulation et à des algorithmes d'IA.</p>
+            <ul>
+              <li data-i18n="experience.gcf1">Modélisation de scénarios de décision et analyse de données logistiques.</li>
+              <li data-i18n="experience.gcf2">Amélioration de la modularité et des performances du système.</li>
+              <li data-i18n="experience.gcf3">Collaboration agile dans un contexte international.</li>
+            </ul>
+            <div class="stack"><span>Python</span><span>Simulation</span><span>Optimisation</span><span>Agile</span></div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-date"><span data-i18n="experience.lipadeDate">Avril — Juin 2023</span></div>
+          <div class="timeline-line"><span></span></div>
+          <div class="timeline-content">
+            <div class="timeline-heading">
+              <div><h3 data-i18n="experience.lipadeRole">Data & Backend — Stage</h3><p>LIPADE · Paris</p></div>
+              <span class="tag">Health Data</span>
+            </div>
+            <p data-i18n="experience.lipadeSummary">Traitement de données issues d'images médicales et migration d'une application vers un backend Python sécurisé.</p>
+            <ul>
+              <li data-i18n="experience.lipade1">Migration PHP vers Flask selon une architecture MVC.</li>
+              <li data-i18n="experience.lipade2">Authentification, rôles, sessions et validation de comptes.</li>
+              <li data-i18n="experience.lipade3">Améliorations UX et échanges avec chercheurs et praticiens hospitaliers.</li>
+            </ul>
+            <div class="stack"><span>Flask</span><span>SQLAlchemy</span><span>JavaScript</span><span>Medical Data</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projects">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-index">03 — <span data-i18n="section.projectsLabel">Projets sélectionnés</span></p>
+          <h2 data-i18n="projects.title">Des cas concrets qui montrent la méthode, pas seulement la technologie.</h2>
+        </div>
+
+        <div class="project-filters reveal" role="group" aria-label="Filtrer les projets">
+          <button class="filter active" data-filter="all" data-i18n="projects.filterAll">Tous</button>
+          <button class="filter" data-filter="nlp">NLP</button>
+          <button class="filter" data-filter="ml">Machine Learning</button>
+          <button class="filter" data-filter="analytics">Analytics</button>
+          <button class="filter" data-filter="other">Other</button>
+        </div>
+
+        <div class="projects-grid">
+
+          <a
+          class="project-card project-card-link reveal"
+          href="./assets/projects/societe-generale-assurances-data-stage.html"
+          data-category="nlp ml analytics"
+          aria-label="Découvrir le projet Data & IA pour l'analyse de retour de formations"
+          >
+          <div class="project-number">01</div>
+
+          <div class="project-visual">
+          <img
+          src="assets/projects/img/societe-generale-assurances-data-stage/acceuil.png"
+          alt="Aperçu de l'application Data & IA pour l'analyse de retour de formations"
+          loading="lazy"
+          >
+          </div>
+
+          <div class="project-body">
+          <p
+          class="project-type"
+          data-i18n="projects.p1Type"
+          >
+          NLP · Projet professionnel
+          </p>
+
+          <h3 data-i18n="projects.p1Title">
+          Data & IA pour l'analyse de retour de formations
+          </h3>
+
+          <p data-i18n="projects.p1Text">
+          Pipeline automatisé pour regrouper, interpréter et classifier des commentaires de formation, de la préparation des données jusqu'au rapport d'insights.
+          </p>
+
+          <div class="stack">
+            <span>Clustering</span>
+            <span>Sentiment Analysis</span>
+            <span>Data Pipeline</span>
+            <span>Data Cleaning</span>
+            <span>Data Visualization</span>
+          </div>
+          <span class="project-cta">
+              Voir le projet <span aria-hidden="true">→</span>
+          </span>
+          </div>
+          </a>
+
+          <a
+          class="project-card project-card-link reveal"
+          href="./assets/projects/social-classification.html"
+          data-category="nlp ml"
+          aria-label="Découvrir le projet Classification de données sociales"
+          >
+          <div class="project-number">02</div>
+
+          <div class="project-visual">
+          <img
+          src="assets/projects/img/social-classification/acceuil.png"
+          alt="Aperçu de l'application Classification de données sociales"
+          loading="lazy"
+          >
+          </div>
+
+          <div class="project-body">
+          <p
+          class="project-type"
+          data-i18n="projects.p2Type"
+          >
+          NLP · Projet académique
+          </p>
+
+          <h3 data-i18n="projects.p2Title">
+          Classification de données sociales
+          </h3>
+
+          <p data-i18n="projects.p2Text">
+          Comparaison structurée de modèles classiques et d'un modèle Transformer français pour mesurer le gain de performance et ses compromis.
+          </p>
+
+          <div class="stack">
+            <span>Scikit-learn</span>
+            <span>CamemBERT</span>
+            <span>Hugging Face</span>
+          </div>
+          <span class="project-cta">
+              Voir le projet <span aria-hidden="true">→</span>
+          </span>
+          </div>
+          </a>
+
+          <a
+          class="project-card project-card-link reveal"
+          href="./assets/projects/tsunami-prediction.html"
+          data-category="ml analytics"
+          aria-label="Découvrir le projet prédiction de données sismiques"
+          >
+          <div class="project-number">03</div>
+
+          <div class="project-visual">
+          <img
+          src="assets/projects/img/tsunami/matrice-confusion.png"
+          alt="Aperçu de l'analyse prédiction de données sismiques"
+          loading="lazy"
+          >
+          </div>
+
+          <div class="project-body">
+          <p
+          class="project-type"
+          data-i18n="projects.p3Type"
+          >
+          Machine Learning · Projet académique
+          </p>
+
+          <h3 data-i18n="projects.p3Title">
+          Prédiction de tsunami
+          </h3>
+
+          <p data-i18n="projects.p3Text">
+          Analyse de données sismiques, préparation des variables et entraînement de modèles pour estimer le risque de tsunami.
+          </p>
+
+          <div class="stack">
+            <span>Python</span>
+            <span>Random Forest</span>
+            <span>SVM</span>
+            <span>XGBoost</span>
+            <span>SMOTE</span>
+          </div>
+          <span class="project-cta">
+              Voir le projet <span aria-hidden="true">→</span>
+          </span>
+          </div>
+          </a>
+
+          <a
+          class="project-card project-card-link reveal"
+          href="./assets/projects/stephen-curry.html"
+          data-category="analytics"
+          aria-label="Découvrir le projet Stephen Curry & le tir à trois points"
+          >
+          <div class="project-number">04</div>
+
+          <div class="project-visual">
+          <img
+          src="assets/projects/img/curry/Taff-1.png"
+          alt="Aperçu de l'application Stephen Curry & le tir à trois points"
+          loading="lazy"
+          >
+          </div>
+
+          <div class="project-body">
+          <p
+          class="project-type"
+          data-i18n="projects.p5Type"
+          >
+          Data Analysis · Projet académique
+          </p>
+
+          <h3 data-i18n="projects.p5Title">
+          Stephen Curry & le tir à trois points
+          </h3>
+
+          <p data-i18n="projects.p5Text">
+          Étude statistique sous R pour analyser la performance, les tendances et la contribution du tir à trois points.
+          </p>
+
+          <div class="stack">
+            <span>R</span>
+            <span>Statistiques</span>
+            <span>DataViz</span>
+          </div>
+          <span class="project-cta">
+              Voir le projet <span aria-hidden="true">→</span>
+          </span>
+          </div>
+          </a>
+          
+          <a
+          class="project-card project-card-link reveal"
+          href="./assets/projects/industrial-flow-simulation.html"
+          data-category="ml analytics"
+          aria-label="Découvrir le projet Simulation de flux industriels"
+          >
+          <article>
+            <div class="project-number">05</div>
+            <div class="project-visual visual-flow" aria-hidden="true">
+              <div class="flow-node">Input</div><span>→</span><div class="flow-node active">Simulation</div><span>→</span><div class="flow-node">Decision</div>
+            </div>
+            <div class="project-body">
+              <p class="project-type" data-i18n="projects.p6Type">Optimisation · Projet professionnel</p>
+              <h3 data-i18n="projects.p6Title">Simulation de flux industriels</h3>
+              <p data-i18n="projects.p6Text">Modélisation d'une chaîne de production pour tester des scénarios, identifier les contraintes et améliorer la prise de décision.</p>
+              <div class="stack"><span>Rust</span><span>Simulation</span><span>Operations Research</span></div>
+              <span class="project-cta">
+              Voir le projet <span aria-hidden="true">→</span>
+              </span>
+            </div>
+          </article>
+          </a>
+
+          <a
+          class="project-card project-card-link reveal"
+          href="./assets/projects/collaborative-map.html"
+          data-category="other"
+          aria-label="Découvrir le projet MAP collaborative"
+          >
+          <div class="project-number">06</div>
+
+          <div class="project-visual">
+          <img
+          src="assets/projects/img/map/Port-1.png"
+          alt="Aperçu de l'application MAP collaborative"
+          loading="lazy"
+          >
+          </div>
+
+          <div class="project-body">
+          <p
+          class="project-type"
+          data-i18n="projects.p7Type"
+          >
+          Développement web · Projet académique
+          </p>
+
+          <h3 data-i18n="projects.p7Title">
+          MAP collaborative
+          </h3>
+
+          <p data-i18n="projects.p7Text">
+          Application web full-stack permettant aux utilisateurs
+          de créer un compte, se connecter et partager des
+          informations sur une carte interactive.
+          </p>
+
+          <div class="stack">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>PHP</span>
+            <span>SQL</span>
+          </div>
+          <span class="project-cta">
+              Voir le projet <span aria-hidden="true">→</span>
+          </span>
+          </div>
+          </a>
+
+        </div>
+
+        <div class="projects-footer reveal">
+          <p data-i18n="projects.footer">Le code public disponible est regroupé sur mon profil GitHub.</p>
+          <a class="text-link" href="https://github.com/QuentinWendling" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="skills">
+      <div class="section-heading reveal">
+        <p class="section-index">04 — <span data-i18n="section.skillsLabel">Compétences</span></p>
+        <h2 data-i18n="skills.title">Une stack orientée expérimentation rapide et mise en production fiable.</h2>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <div class="skill-icon">ML</div>
+          <h3>Data Science & ML</h3>
+          <p data-i18n="skills.mlText">Préparation, modélisation, évaluation et interprétation.</p>
+          <div class="skill-list"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>TensorFlow</span><span>PyTorch</span></div>
+        </article>
+        <article class="skill-card reveal delay-1">
+          <div class="skill-icon">NLP</div>
+          <h3>NLP & LLM</h3>
+          <p data-i18n="skills.nlpText">Classification, clustering, embeddings et génération de labels.</p>
+          <div class="skill-list"><span>Transformers</span><span>CamemBERT</span><span>Gemma</span><span>Hugging Face</span><span>Text Classification</span></div>
+        </article>
+        <article class="skill-card reveal delay-2">
+          <div class="skill-icon">DB</div>
+          <h3>Data & Backend</h3>
+          <p data-i18n="skills.dataText">APIs, bases de données et pipelines applicatifs.</p>
+          <div class="skill-list"><span>SQL</span><span>PostgreSQL</span><span>MongoDB</span><span>Flask</span><span>FastAPI</span><span>SQLite</span></div>
+        </article>
+        <article class="skill-card reveal delay-3">
+          <div class="skill-icon">BI</div>
+          <h3>Visualisation & Tools</h3>
+          <p data-i18n="skills.toolsText">Exploration visuelle, dashboards et collaboration.</p>
+          <div class="skill-list"><span>Matplotlib</span><span>Seaborn</span><span>Power BI</span><span>Git</span><span>AWS</span><span>GCP</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell education-section" id="education">
+      <div class="section-heading reveal">
+        <p class="section-index">05 — <span data-i18n="section.educationLabel">Formation</span></p>
+        <h2 data-i18n="education.title">Un parcours data & informatique construit entre Paris et le Québec.</h2>
+      </div>
+
+      <div class="education-list">
+        <article class="education-item reveal">
+          <span class="education-year">2024 — 2026</span>
+          <div><h3 data-i18n="education.master">Master Informatique — Données, Connaissances et Intelligence</h3><p>Université Paris Cité · M2 : 14,03/20</p></div>
+          <span class="education-badge">M2</span>
+        </article>
+        <article class="education-item reveal">
+          <span class="education-year">2023 — 2024</span>
+          <div><h3 data-i18n="education.uqac">Baccalauréat en informatique — codiplomation</h3><p>UQAC, Canada · L3 : 3,27/4,3 · codiplomation avec Université Paris Cité</p></div>
+          <span class="education-badge">L3</span>
+        </article>
+        <article class="education-item reveal">
+          <span class="education-year">2021 — 2024</span>
+          <div><h3 data-i18n="education.but">BUT Informatique — parcours AGED</h3><p>Université Paris Cité · IUT Paris — Rives de Seine</p></div>
+          <span class="education-badge">BUT</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="shell contact-inner reveal">
+        <div>
+          <p class="section-index">06 — <span data-i18n="section.contactLabel">Contact</span></p>
+          <h2 data-i18n="contact.title">Un projet data, IA ou NLP à construire ?</h2>
+          <p data-i18n="contact.text">Échangeons autour de vos besoins, d'une opportunité ou d'une collaboration.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button light" href="mailto:wendlingqn@gmail.com"><span data-i18n="contact.email">M'écrire par email</span><span>↗</span></a>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/quentin-wendling-413a5125a" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://github.com/QuentinWendling" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>© <span id="year"></span> Quentin Wendling</p>
+      <p data-i18n="footer.text">Conçu pour présenter des projets data avec clarté.</p>
+      <a href="#top" data-i18n="footer.back">Retour en haut ↑</a>
     </div>
-</section>
+  </footer>
 
-<!-- ======= Footer ======= -->
-<footer class="footer text-center py-4" style="background-color:#0069d9; color:white;">
-    <div class="container">
-        <h5 class="mb-3">Contact</h5>
-        <p class="mb-1">
-            <a href="mailto:wendlingqn@gmail.com" style="color:white; text-decoration:none;">
-                wendlingqn@gmail.com
-            </a>
-            &nbsp;|&nbsp;
-        </p>
-        <p class="mb-2">
-            <a href="https://www.linkedin.com/in/quentin-wendling-413a5125a/" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration:underline;">
-                LinkedIn
-            </a>
-        </p>
-        <p class="small mb-0" style="opacity:0.8;">© 2025 Quentin Wendling — Tous droits réservés</p>
-    </div>
-</footer>
-<!-- End  Footer -->
-
-<div id="preloader"></div>
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-<!-- Vendor JS Files -->
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/typed.js/typed.min.js"></script>
-
-<!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-

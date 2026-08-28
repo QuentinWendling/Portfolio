@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3J0PYDHEY"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z3J0PYDHEY');
+  </script>
+  
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Data Analyst / Data Scientist — Société Générale Assurances — Quentin Wendling</title>
+
+  <meta
+    name="description"
+    content="Étude de cas d'un stage de six mois en Data Analyse et Data Science : automatisation de traitements, analyse de données de formation, NLP et industrialisation, présentés sans données confidentielles."
+  >
+
+  <meta name="theme-color" content="#070b14">
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23050b18%22/><path d=%22M18 26 Q50 12 82 26%22 fill=%22none%22 stroke=%22%230078ff%22 stroke-width=%226%22 stroke-linecap=%22round%22/><text x=%2250%22 y=%2268%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%230078ff%22 font-family=%22Arial, sans-serif%22 letter-spacing=%22-3%22>QW</text></svg>"
+  >
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/styles-sga-data-stage.css">
+
+  <script>
+    const savedTheme = localStorage.getItem("portfolio-theme");
+
+    if (savedTheme) {
+      document.documentElement.dataset.theme = savedTheme;
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- En-tête -->
+  <header class="project-header">
+    <div class="project-header-inner">
+
+      <a
+        href="../../index.html"
+        class="project-logo"
+        aria-label="Retour à l'accueil"
+      >
+        <span class="project-logo-mark">QW</span>
+        <span>Quentin Wendling</span>
+      </a>
+
+      <nav class="project-header-actions">
+        <a
+          href="../../index.html#projects"
+          class="header-back-link"
+          data-i18n="nav.projects"
+        >
+          Projets
+        </a>
+
+        <button
+          class="language-toggle"
+          type="button"
+          aria-label="Switch website to English"
+        >
+          EN
+        </button>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Changer le thème"
+        >
+          <span class="theme-icon" aria-hidden="true">☼</span>
+        </button>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- Introduction -->
+    <section class="project-hero">
+      <div class="project-container">
+
+        <a
+          href="../../index.html#projects"
+          class="back-link"
+          data-i18n="project.back"
+        >
+          ← Retour aux projets
+        </a>
+
+        <div class="project-hero-grid">
+
+          <div class="project-hero-content">
+
+            <p
+              class="project-eyebrow"
+              data-i18n="project.category"
+            >
+              Data Analyse · Data Science · NLP · Stage
+            </p>
+
+            <h1 data-i18n="project.title">
+              Data & IA pour l'analyse de retour de formations
+            </h1>
+
+            <p
+              class="project-introduction"
+              data-i18n="project.introduction"
+            >
+              Conception de pipelines end-to-end pour automatiser des analyses
+              récurrentes, fiabiliser des données hétérogènes et transformer des
+              retours quantitatifs et textuels en restitutions directement
+              exploitables par les équipes métier.
+            </p>
+
+            <div class="project-tags" aria-label="Technologies principales">
+              <span>Python</span>
+              <span>Data Pipeline</span>
+              <span>NLP</span>
+              <span>Clustering</span>
+              <span>Sentiment Analysis</span>
+              <span>Data Quality</span>
+            </div>
+
+            <div class="project-actions">
+              <a
+                href="#case-study"
+                class="button button-primary"
+                data-i18n="project.caseStudy"
+              >
+                Découvrir le stage
+              </a>
+
+              <a
+                href="#architecture"
+                class="button button-secondary"
+                data-i18n="project.architecture"
+              >
+                Voir le pipeline
+              </a>
+            </div>
+
+            <p class="project-confidentiality" data-i18n="project.confidentiality">
+              Stage confidentiel — données, volumes précis, règles métier et visuels sont
+              volontairement anonymisés ou représentés de manière conceptuelle.
+            </p>
+          </div>
+
+          <aside class="project-metadata">
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.period">Période</span>
+              <strong data-i18n="metadata.periodValue">
+                Stage de 6 mois
+              </strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.context">Entreprise</span>
+              <strong>Société Générale Assurances</strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.role">Rôle</span>
+              <strong data-i18n="metadata.roleValue">
+                Data Analyst / Data Scientist
+              </strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.type">Périmètre</span>
+              <strong data-i18n="metadata.typeValue">
+                Automatisation · Analyse · NLP
+              </strong>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Visuel conceptuel -->
+    <section class="project-cover">
+      <div class="project-container">
+        <figure class="project-cover-frame data-stage-cover">
+          <figcaption id="data-stage-visual-title" class="sr-only" data-i18n="visual.caption">
+            Représentation conceptuelle d'un pipeline allant de sources de données
+            hétérogènes vers des traitements Python, des analyses quantitatives et
+            NLP, puis des restitutions Excel et HTML.
+          </figcaption>
+
+          <div class="data-workbench" aria-labelledby="data-stage-visual-title">
+
+            <div class="data-workbench-toolbar">
+              <div class="data-workbench-status">
+                <span class="data-workbench-status-dot" aria-hidden="true"></span>
+                <span data-i18n="visual.status">Pipeline conceptuel</span>
+              </div>
+
+              <div class="data-workbench-badges" aria-hidden="true">
+                <span>DATA</span>
+                <span>NLP</span>
+                <span>AUTO</span>
+              </div>
+            </div>
+
+            <div class="data-workbench-body">
+
+              <div class="data-pipeline" data-data-pipeline>
+
+                <article class="data-pipeline-step" data-pipeline-step="0">
+                  <span class="data-step-index">01</span>
+                  <div class="data-step-icon" aria-hidden="true">↧</div>
+                  <p data-i18n="visual.inputLabel">Entrées</p>
+                  <strong data-i18n="visual.inputTitle">Sources hétérogènes</strong>
+                  <ul>
+                    <li data-i18n="visual.inputItem1">Exports tabulaires</li>
+                    <li data-i18n="visual.inputItem2">Référentiels complémentaires</li>
+                  </ul>
+                </article>
+
+                <span class="data-pipeline-connector" aria-hidden="true"></span>
+
+                <article class="data-pipeline-step" data-pipeline-step="1">
+                  <span class="data-step-index">02</span>
+                  <div class="data-step-icon" aria-hidden="true">⌘</div>
+                  <p data-i18n="visual.prepLabel">Préparation</p>
+                  <strong data-i18n="visual.prepTitle">Qualité & normalisation</strong>
+                  <ul>
+                    <li data-i18n="visual.prepItem1">Contrôles et nettoyage</li>
+                    <li data-i18n="visual.prepItem2">Règles robustes aux variations</li>
+                  </ul>
+                </article>
+
+                <span class="data-pipeline-connector" aria-hidden="true"></span>
+
+                <article class="data-pipeline-step" data-pipeline-step="2">
+                  <span class="data-step-index">03</span>
+                  <div class="data-step-icon" aria-hidden="true">∑</div>
+                  <p data-i18n="visual.analysisLabel">Analyse</p>
+                  <strong data-i18n="visual.analysisTitle">Indicateurs & NLP</strong>
+                  <ul>
+                    <li data-i18n="visual.analysisItem1">Agrégations multi-axes</li>
+                    <li data-i18n="visual.analysisItem2">Clustering & sentiment</li>
+                  </ul>
+                </article>
+
+                <span class="data-pipeline-connector" aria-hidden="true"></span>
+
+                <article class="data-pipeline-step" data-pipeline-step="3">
+                  <span class="data-step-index">04</span>
+                  <div class="data-step-icon" aria-hidden="true">▦</div>
+                  <p data-i18n="visual.outputLabel">Restitution</p>
+                  <strong data-i18n="visual.outputTitle">Livrables exploitables</strong>
+                  <ul>
+                    <li data-i18n="visual.outputItem1">Reporting Excel automatisé</li>
+                    <li data-i18n="visual.outputItem2">Synthèses HTML interactives</li>
+                  </ul>
+                </article>
+
+              </div>
+
+              <aside class="data-workbench-panel">
+                <p class="data-panel-label" data-i18n="visual.panelTitle">
+                  Axes du projet
+                </p>
+
+                <div class="data-panel-metric">
+                  <span data-i18n="visual.metric1Label">Traitement</span>
+                  <strong data-i18n="visual.metric1Value">Automatisé</strong>
+                  <div class="data-progress"><i style="width: 92%"></i></div>
+                </div>
+
+                <div class="data-panel-metric">
+                  <span data-i18n="visual.metric2Label">Volumétrie</span>
+                  <strong data-i18n="visual.metric2Value">Millions de lignes</strong>
+                  <div class="data-progress"><i style="width: 84%"></i></div>
+                </div>
+
+                <div class="data-panel-metric">
+                  <span data-i18n="visual.metric3Label">Analyse</span>
+                  <strong data-i18n="visual.metric3Value">Quantitatif + NLP</strong>
+                  <div class="data-progress"><i style="width: 88%"></i></div>
+                </div>
+
+                <div class="data-panel-principle">
+                  <span data-i18n="visual.principleLabel">Principe directeur</span>
+                  <strong data-i18n="visual.principleValue">
+                    Robuste · Reproductible · Maintenable
+                  </strong>
+                </div>
+              </aside>
+
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+
+    <!-- Étude de cas -->
+    <section id="case-study" class="case-study">
+      <div class="project-container case-study-grid">
+
+        <aside class="case-study-navigation">
+          <p data-i18n="summary.title">Sommaire</p>
+
+          <nav>
+            <a href="#context" data-i18n="summary.context">
+              Le contexte
+            </a>
+
+            <a href="#objective" data-i18n="summary.objective">
+              Les objectifs
+            </a>
+
+            <a href="#contributions" data-i18n="summary.contributions">
+              Mes contributions
+            </a>
+
+            <a href="#architecture" data-i18n="summary.architecture">
+              Le pipeline
+            </a>
+
+            <a href="#results" data-i18n="summary.results">
+              Les résultats
+            </a>
+
+            <a href="#lessons" data-i18n="summary.lessons">
+              Enseignements
+            </a>
+          </nav>
+        </aside>
+
+
+        <div class="case-study-content">
+
+          <section id="context" class="content-section">
+            <p class="section-number">01</p>
+
+            <h2 data-i18n="context.title">
+              Le contexte
+            </h2>
+
+            <p data-i18n="context.p1">
+              Certaines analyses liées à l'évaluation des formations reposaient sur
+              des exports volumineux et hétérogènes pouvant représenter plusieurs
+              millions de lignes, avec une part importante de lecture, de tri et de
+              consolidation manuelle. Le besoin était récurrent et devait pouvoir être
+              reproduit de façon fiable à chaque nouvelle campagne d'analyse.
+            </p>
+
+            <p data-i18n="context.p2">
+              Mon stage a consisté à transformer ces traitements en chaînes d'analyse
+              automatisées : comprendre les règles métier, fiabiliser les données,
+              calculer les indicateurs attendus et restituer les résultats sous une
+              forme directement exploitable, tout en explorant des approches de Data
+              Science pour les commentaires textuels.
+            </p>
+
+            <div class="confidentiality-callout">
+              <span data-i18n="context.confidentialityLabel">Confidentialité</span>
+              <p data-i18n="context.confidentialityText">
+                Cette page décrit les méthodes, responsabilités et compétences mises
+                en œuvre. Les données réelles, règles internes, seuils, volumes précis,
+                résultats chiffrés et interfaces utilisées en entreprise ne sont pas
+                reproduits.
+              </p>
+            </div>
+          </section>
+
+
+          <section id="objective" class="content-section">
+            <p class="section-number">02</p>
+
+            <h2 data-i18n="objective.title">
+              Les objectifs
+            </h2>
+
+            <div class="objective-grid">
+
+              <article class="objective-card">
+                <span>01</span>
+
+                <h3 data-i18n="objective.card1Title">
+                  Automatiser l'analyse
+                </h3>
+
+                <p data-i18n="objective.card1Text">
+                  Remplacer des manipulations récurrentes par des traitements Python
+                  reproductibles et conçus pour être relancés simplement.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>02</span>
+
+                <h3 data-i18n="objective.card2Title">
+                  Fiabiliser à grande échelle
+                </h3>
+
+                <p data-i18n="objective.card2Text">
+                  Gérer des fichiers et formats variables, les valeurs manquantes, les
+                  doublons et les incohérences sur des jeux pouvant atteindre plusieurs
+                  millions de lignes, sans bloquer toute la chaîne.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>03</span>
+
+                <h3 data-i18n="objective.card3Title">
+                  Extraire plus d'information
+                </h3>
+
+                <p data-i18n="objective.card3Text">
+                  Compléter le reporting quantitatif par une analyse de commentaires
+                  afin de faire émerger thèmes récurrents et tendances de sentiment.
+                </p>
+              </article>
+
+            </div>
+          </section>
+
+
+          <section id="contributions" class="content-section">
+            <p class="section-number">03</p>
+
+            <h2 data-i18n="contributions.title">
+              Mes contributions
+            </h2>
+
+            <p data-i18n="contributions.text">
+              J'ai pris en charge plusieurs briques de bout en bout, depuis
+              l'exploration des données et la formalisation du besoin jusqu'à la
+              génération des livrables, la documentation et la mise à disposition.
+              Le volet NLP a été mené avec l'appui de l'équipe Data Science pour les modèles
+              autorisés dans l'environnement de l'entreprise.
+            </p>
+
+            <div class="feature-list">
+
+              <div class="feature-item">
+                <span class="feature-icon">01</span>
+
+                <div>
+                  <h3 data-i18n="contributions.feature1Title">
+                    Pipeline Data end-to-end
+                  </h3>
+
+                  <p data-i18n="contributions.feature1Text">
+                    Exploration d'exports, sélection des informations utiles, nettoyage,
+                    normalisation, gestion des cas incomplets et consolidation de
+                    plusieurs sources avec Python et Pandas, y compris sur des volumes
+                    de plusieurs millions de lignes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">02</span>
+
+                <div>
+                  <h3 data-i18n="contributions.feature2Title">
+                    Robustesse & qualité de données
+                  </h3>
+
+                  <p data-i18n="contributions.feature2Text">
+                    Mise en place de règles tolérantes aux variations de saisie,
+                    rapprochements approximatifs lorsque nécessaire, contrôles de
+                    cohérence et traitement explicite des doublons.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">03</span>
+
+                <div>
+                  <h3 data-i18n="contributions.feature3Title">
+                    Reporting automatisé
+                  </h3>
+
+                  <p data-i18n="contributions.feature3Text">
+                    Calcul d'indicateurs d'évaluation, analyses selon plusieurs axes
+                    métier et génération de fichiers Excel structurés avec OpenPyXL,
+                    incluant des visualisations adaptées à la lecture utilisateur.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">04</span>
+
+                <div>
+                  <h3 data-i18n="contributions.feature4Title">
+                    Analyse de commentaires par NLP
+                  </h3>
+
+                  <p data-i18n="contributions.feature4Text">
+                    Nettoyage de verbatims, représentation vectorielle, réduction de
+                    dimension, clustering, réduction du bruit, sélection de
+                    commentaires représentatifs et classification de sentiment.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">05</span>
+
+                <div>
+                  <h3 data-i18n="contributions.feature5Title">
+                    Restitution interactive
+                  </h3>
+
+                  <p data-i18n="contributions.feature5Text">
+                    Génération d'une synthèse HTML permettant de parcourir les grands
+                    thèmes détectés, leur poids relatif, le sentiment associé et des
+                    exemples représentatifs, sans exposer le code d'analyse aux
+                    utilisateurs finaux.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">06</span>
+
+                <div>
+                  <h3 data-i18n="contributions.feature6Title">
+                    Industrialisation & transmission
+                  </h3>
+
+                  <p data-i18n="contributions.feature6Text">
+                    Optimisation des lectures de fichiers, de l'utilisation mémoire et des
+                    calculs, documentation utilisateur, simplification du lancement et
+                    préparation d'un environnement commun afin que la solution puisse
+                    être reprise et maintenue.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="evaluation-scope">
+              <div class="evaluation-scope-heading">
+                <span data-i18n="contributions.evaluationLabel">Cadre d'évaluation</span>
+                <strong data-i18n="contributions.evaluationTitle">Du ressenti au transfert en situation de travail</strong>
+              </div>
+
+              <div class="evaluation-grid">
+                <article>
+                  <span>01</span>
+                  <strong data-i18n="contributions.level1Title">Satisfaction</strong>
+                  <p data-i18n="contributions.level1Text">
+                    Automatisation des indicateurs de retour et des synthèses destinées au suivi des formations.
+                  </p>
+                </article>
+
+                <article>
+                  <span>02</span>
+                  <strong data-i18n="contributions.level2Title">Apprentissage</strong>
+                  <p data-i18n="contributions.level2Text">
+                    Analyse des résultats d'évaluation selon plusieurs dimensions afin d'identifier plus finement les tendances.
+                  </p>
+                </article>
+
+                <article>
+                  <span>03</span>
+                  <strong data-i18n="contributions.level3Title">Transfert</strong>
+                  <p data-i18n="contributions.level3Text">
+                    Proposition d'un suivi différé pour mesurer l'utilisation des acquis et automatisation de la restitution associée.
+                  </p>
+                </article>
+              </div>
+            </div>
+
+            <div class="tech-stack-card">
+              <span data-i18n="contributions.stackLabel">Approches & outils mobilisés</span>
+              <div class="tech-stack-list">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>OpenPyXL</span>
+                <span>Levenshtein</span>
+                <span>UMAP</span>
+                <span>K-Means</span>
+                <span>DBSCAN</span>
+                <span>CamemBERT</span>
+                <span>Gemma</span>
+                <span>HTML</span>
+              </div>
+            </div>
+          </section>
+
+
+          <section id="architecture" class="content-section">
+            <p class="section-number">04</p>
+
+            <h2 data-i18n="architecture.title">
+              Un pipeline pensé pour être relancé
+            </h2>
+
+            <p data-i18n="architecture.text">
+              Plutôt que de construire une analyse ponctuelle, j'ai structuré les
+              traitements comme une chaîne réutilisable. Chaque étape a une
+              responsabilité claire et peut évoluer sans remettre en cause tout le
+              processus.
+            </p>
+
+            <div class="data-architecture-diagram">
+
+              <div class="data-architecture-block">
+                <span data-i18n="architecture.inputLabel">Sources</span>
+                <strong data-i18n="architecture.inputTitle">
+                  Exports · Référentiels
+                </strong>
+                <p data-i18n="architecture.inputText">
+                  Lecture de fichiers hétérogènes et rassemblement des informations
+                  nécessaires à l'analyse.
+                </p>
+              </div>
+
+              <span class="data-architecture-arrow">→</span>
+
+              <div class="data-architecture-block">
+                <span data-i18n="architecture.prepLabel">Préparation</span>
+                <strong data-i18n="architecture.prepTitle">
+                  Nettoyage · Contrôles · Rapprochement
+                </strong>
+                <p data-i18n="architecture.prepText">
+                  Normalisation, gestion des données manquantes, variations de format
+                  et règles de qualité avant calcul.
+                </p>
+              </div>
+
+              <span class="data-architecture-arrow">→</span>
+
+              <div class="data-architecture-block">
+                <span data-i18n="architecture.analysisLabel">Analyse</span>
+                <strong data-i18n="architecture.analysisTitle">
+                  KPI · Segmentation · NLP
+                </strong>
+                <p data-i18n="architecture.analysisText">
+                  Agrégations, analyses multi-axes, clustering de commentaires et
+                  classification lorsque le besoin le nécessite.
+                </p>
+              </div>
+
+              <span class="data-architecture-arrow">→</span>
+
+              <div class="data-architecture-block">
+                <span data-i18n="architecture.outputLabel">Restitution</span>
+                <strong data-i18n="architecture.outputTitle">
+                  Excel · Visualisations · HTML
+                </strong>
+                <p data-i18n="architecture.outputText">
+                  Production automatique de livrables lisibles, documentés et conçus
+                  pour une utilisation récurrente par les équipes.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="architecture-note">
+              <span data-i18n="architecture.noteLabel">Choix de conception</span>
+              <p data-i18n="architecture.noteText">
+                Les détails de schéma, de règles métier et d'infrastructure ne sont
+                volontairement pas représentés. Le diagramme montre uniquement la
+                logique fonctionnelle générale du travail réalisé.
+              </p>
+            </div>
+          </section>
+
+
+          <section id="results" class="content-section">
+            <p class="section-number">05</p>
+
+            <h2 data-i18n="results.title">
+              Les résultats principaux
+            </h2>
+
+            <p data-i18n="results.text">
+              Le stage a permis de remplacer plusieurs opérations manuelles par des
+              traitements reproductibles, conçus pour rester robustes sur des volumes
+              pouvant atteindre plusieurs millions de lignes. L'analyse a également été
+              élargie aux dimensions quantitatives et textuelles, puis préparée pour un
+              usage durable au-delà d'un simple prototype individuel.
+            </p>
+
+            <div class="result-metrics data-stage-result-metrics">
+              <article>
+                <span data-i18n="results.metric1Label">Processus</span>
+                <strong data-i18n="results.metric1Value">Automatisé</strong>
+                <p data-i18n="results.metric1Text">
+                  Des analyses récurrentes peuvent être relancées à partir de nouveaux
+                  exports sans reprendre manuellement tout le traitement.
+                </p>
+              </article>
+
+              <article>
+                <span data-i18n="results.metric2Label">Volumétrie</span>
+                <strong data-i18n="results.metric2Value">Plusieurs millions</strong>
+                <p data-i18n="results.metric2Text">
+                  de lignes peuvent être traitées par les pipelines, avec une attention
+                  portée aux performances, à la mémoire et à la robustesse des données.
+                </p>
+              </article>
+
+              <article>
+                <span data-i18n="results.metric3Label">Analyse</span>
+                <strong data-i18n="results.metric3Value">360°</strong>
+                <p data-i18n="results.metric3Text">
+                  Les restitutions combinent indicateurs, segmentations métier,
+                  visualisations et analyse de verbatims.
+                </p>
+              </article>
+
+              <article>
+                <span data-i18n="results.metric4Label">Transmission</span>
+                <strong data-i18n="results.metric4Value">Maintenable</strong>
+                <p data-i18n="results.metric4Text">
+                  Documentation, lancement simplifié et environnement partagé ont été
+                  intégrés à la réflexion de mise en production interne.
+                </p>
+              </article>
+            </div>
+
+            <div class="result-takeaway">
+              <span data-i18n="results.takeawayLabel">À retenir</span>
+              <p data-i18n="results.takeawayText">
+                La valeur du stage ne repose pas sur un modèle isolé, mais sur la mise
+                en place d'une chaîne complète : comprendre le besoin, fiabiliser les
+                données, automatiser l'analyse, valider les résultats et livrer un
+                outil réellement utilisable.
+              </p>
+            </div>
+          </section>
+
+
+          <section id="lessons" class="content-section">
+            <p class="section-number">06</p>
+
+            <h2 data-i18n="lessons.title">
+              Ce que ce stage m'a appris
+            </h2>
+
+            <p data-i18n="lessons.text">
+              Cette expérience m'a permis de travailler sur toute la chaîne de valeur
+              d'un projet Data, avec des contraintes concrètes de volumétrie, de qualité,
+              de confidentialité, de performance et d'adoption par les utilisateurs.
+            </p>
+
+            <ul class="lessons-list">
+              <li data-i18n="lessons.item1">
+                Transformer un besoin métier récurrent en pipeline de données robuste
+              </li>
+
+              <li data-i18n="lessons.item2">
+                Optimiser les lectures, la mémoire et les calculs sur des données imparfaites du réel
+              </li>
+
+              <li data-i18n="lessons.item3">
+                Combiner Data Analyse, Machine Learning et NLP dans un même produit
+              </li>
+
+              <li data-i18n="lessons.item4">
+                Évaluer un modèle avec plusieurs métriques plutôt qu'un score unique
+              </li>
+
+              <li data-i18n="lessons.item5">
+                Penser documentation, UX et maintenabilité dès la phase de développement
+              </li>
+
+              <li data-i18n="lessons.item6">
+                Collaborer avec les équipes métier et Data/IA tout en respectant la confidentialité
+              </li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Projet suivant -->
+    <section class="next-project">
+      <div class="project-container">
+
+        <a
+          href="social-classification.html"
+          class="next-project-link"
+        >
+          <span data-i18n="next.label">Projet suivant</span>
+
+          <strong data-i18n="next.title">
+            Classification de données sociales
+          </strong>
+
+          <span class="next-arrow">→</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="project-footer">
+    <div class="project-container project-footer-inner">
+
+      <p>
+        © <span id="year"></span> Quentin Wendling
+      </p>
+
+      <a
+        href="../../index.html#projects"
+        data-i18n="footer.back"
+      >
+        Retour aux projets ↑
+      </a>
+
+    </div>
+  </footer>
+
+  <script src="./js/project-page-sga-data-stage.js"></script>
+</body>
+</html>

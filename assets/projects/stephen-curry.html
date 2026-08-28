@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3J0PYDHEY"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z3J0PYDHEY');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Stephen Curry & le tir à trois points — Quentin Wendling</title>
+
+  <meta
+    name="description"
+    content="Étude statistique sous R consacrée aux performances de Stephen Curry, à ses comparaisons avec les grands tireurs NBA et à l'évolution du tir à trois points."
+  >
+
+  <meta name="theme-color" content="#070b14">
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23050b18%22/><path d=%22M18 26 Q50 12 82 26%22 fill=%22none%22 stroke=%22%230078ff%22 stroke-width=%226%22 stroke-linecap=%22round%22/><text x=%2250%22 y=%2268%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%230078ff%22 font-family=%22Arial, sans-serif%22 letter-spacing=%22-3%22>QW</text></svg>"
+  >
+
+  <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <script>
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme) {
+      document.documentElement.dataset.theme = savedTheme;
+    }
+  </script>
+</head>
+
+<body>
+  <!-- En-tête -->
+  <header class="project-header">
+    <div class="project-header-inner">
+      <a
+        href="../../index.html"
+        class="project-logo"
+        aria-label="Retour à l'accueil"
+        data-i18n-aria="header.homeAria"
+      >
+        <span class="project-logo-mark">QW</span>
+        <span>Quentin Wendling</span>
+      </a>
+
+      <nav class="project-header-actions">
+        <a
+          href="../../index.html#projects"
+          class="header-back-link"
+          data-i18n="nav.projects"
+        >
+          Projets
+        </a>
+
+        <button
+          class="language-toggle"
+          type="button"
+          aria-label="Switch website to English"
+        >
+          EN
+        </button>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Changer le thème"
+          data-i18n-aria="theme.toggleAria"
+        >
+          <span class="theme-icon" aria-hidden="true">☼</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Introduction -->
+    <section class="project-hero">
+      <div class="project-container">
+        <a
+          href="../../index.html#projects"
+          class="back-link"
+          data-i18n="project.back"
+        >
+          ← Retour aux projets
+        </a>
+
+        <div class="project-hero-grid">
+          <div class="project-hero-content">
+            <p class="project-eyebrow" data-i18n="project.category">
+              Data Science · Étude statistique sous R
+            </p>
+
+            <h1 data-i18n="project.title">
+              Stephen Curry & le tir à trois points
+            </h1>
+
+            <p class="project-introduction" data-i18n="project.introduction">
+              Une analyse de données NBA pour mesurer les performances de Stephen Curry,
+              comparer son profil aux grands tireurs de l'histoire et étudier son influence
+              sur l'évolution du tir à trois points.
+            </p>
+
+            <div class="project-tags">
+              <span>R</span>
+              <span>tidyverse</span>
+              <span>dplyr</span>
+              <span>ggplot2</span>
+              <span>Basketball-Reference</span>
+            </div>
+
+            <div class="project-actions">
+              <a
+                href="https://github.com/QuentinWendling/Stephen-Curry-est-il-le-meilleur-shooter-a-trois-points"
+                class="button button-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="project.github"
+              >
+                Voir l'analyse sur GitHub
+              </a>
+
+              <a
+                href="#case-study"
+                class="button button-secondary"
+                data-i18n="project.caseStudy"
+              >
+                Découvrir l'étude
+              </a>
+            </div>
+          </div>
+
+          <aside class="project-metadata">
+            <div class="metadata-item">
+              <span data-i18n="metadata.period">Période</span>
+              <strong>2023</strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.context">Contexte</span>
+              <strong data-i18n="metadata.contextValue">
+                Projet universitaire · UQAC
+              </strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.role">Rôle</span>
+              <strong data-i18n="metadata.roleValue">
+                Analyse de données & visualisation
+              </strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.type">Type</span>
+              <strong data-i18n="metadata.typeValue">
+                Étude statistique NBA
+              </strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image principale -->
+    <section class="project-cover">
+      <div class="project-container">
+        <figure class="project-cover-frame swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="./img/curry/Taff-1.png"
+                alt="Aperçu de statistique réalisé"
+                data-i18n-alt="images.curry"
+              >
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/curry/Taff-2.png"
+                alt="Aperçu de statistique réalisé"
+                data-i18n-alt="images.efficiency"
+              >
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/curry/Taff-3.png"
+                alt="Aperçu de statistique réalisé"
+                data-i18n-alt="images.evolution"
+              >
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Étude de cas -->
+    <section id="case-study" class="case-study">
+      <div class="project-container case-study-grid">
+        <aside class="case-study-navigation">
+          <p data-i18n="summary.title">Sommaire</p>
+
+          <nav>
+            <a href="#context" data-i18n="summary.context">Le contexte</a>
+            <a href="#objective" data-i18n="summary.objective">Les questions</a>
+            <a href="#solution" data-i18n="summary.solution">La méthode</a>
+            <a href="#results" data-i18n="summary.results">Les résultats</a>
+            <a href="#gallery" data-i18n="summary.gallery">Galerie</a>
+            <a href="#lessons" data-i18n="summary.lessons">Enseignements</a>
+          </nav>
+        </aside>
+
+        <div class="case-study-content">
+          <section id="context" class="content-section">
+            <p class="section-number">01</p>
+
+            <h2 data-i18n="context.title">Le contexte</h2>
+
+            <p data-i18n="context.p1">
+              Réalisé dans le cadre d'un cours d'introduction à la science des
+              données, ce projet part d'une question très présente dans la culture
+              NBA : Stephen Curry peut-il être considéré comme le meilleur tireur
+              à trois points de l'histoire ?
+            </p>
+
+            <p data-i18n="context.p2">
+              L'étude s'appuie sur des données de Basketball-Reference pour replacer
+              ses performances dans le temps, les comparer à celles d'autres grands
+              spécialistes et observer l'évolution du tir longue distance dans la ligue.
+            </p>
+          </section>
+
+          <section id="objective" class="content-section">
+            <p class="section-number">02</p>
+
+            <h2 data-i18n="objective.title">Les questions d'analyse</h2>
+
+            <div class="objective-grid">
+              <article class="objective-card">
+                <span>01</span>
+
+                <h3 data-i18n="objective.card1Title">
+                  Mesurer la performance
+                </h3>
+
+                <p data-i18n="objective.card1Text">
+                  Étudier le volume, l'adresse et la part du tir à trois points
+                  dans le jeu de Stephen Curry au fil des saisons.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>02</span>
+
+                <h3 data-i18n="objective.card2Title">
+                  Comparer les références
+                </h3>
+
+                <p data-i18n="objective.card2Text">
+                  Mettre son profil en perspective avec Ray Allen, Reggie Miller,
+                  James Harden et Kyle Korver selon plusieurs indicateurs.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>03</span>
+
+                <h3 data-i18n="objective.card3Title">
+                  Observer l'évolution de la NBA
+                </h3>
+
+                <p data-i18n="objective.card3Text">
+                  Analyser la progression du nombre et de la proportion de tirs à
+                  trois points tentés dans la ligue depuis son arrivée.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section id="solution" class="content-section">
+            <p class="section-number">03</p>
+
+            <h2 data-i18n="solution.title">La méthode d'analyse</h2>
+
+            <p data-i18n="solution.text">
+              Les données de carrière, de saison et les moyennes de la NBA ont été
+              importées dans R, nettoyées et rapprochées afin de construire des
+              indicateurs comparables. Les résultats ont ensuite été présentés sous
+              forme de graphiques pour rendre les tendances immédiatement lisibles.
+            </p>
+
+            <div class="feature-list">
+              <div class="feature-item">
+                <span class="feature-icon">01</span>
+
+                <div>
+                  <h3 data-i18n="solution.feature1Title">Collecte des données</h3>
+
+                  <p data-i18n="solution.feature1Text">
+                    Import de fichiers CSV et Excel provenant de Basketball-Reference :
+                    leaders en carrière, records saisonniers et statistiques par joueur.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">02</span>
+
+                <div>
+                  <h3 data-i18n="solution.feature2Title">Préparation sous R</h3>
+
+                  <p data-i18n="solution.feature2Text">
+                    Filtrage, conversion de variables, jointures et création de ratios
+                    avec tidyverse, dplyr, readr et readxl.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">03</span>
+
+                <div>
+                  <h3 data-i18n="solution.feature3Title">Visualisation</h3>
+
+                  <p data-i18n="solution.feature3Text">
+                    Construction de diagrammes en barres, nuages de points et séries
+                    temporelles avec ggplot2, puis présentation avec xaringan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="results" class="content-section">
+            <p class="section-number">04</p>
+
+            <h2 data-i18n="results.title">Les résultats clés</h2>
+
+            <p data-i18n="results.introduction">
+              L'analyse ne réduit pas le titre de « meilleur tireur » à une seule
+              statistique. Elle montre plutôt que Stephen Curry se distingue par une
+              combinaison rare de volume, d'efficacité, de régularité et de records.
+            </p>
+
+            <div class="architecture-diagram">
+              <div class="architecture-block">
+                <span data-i18n="results.volumeLabel">Volume</span>
+                <strong data-i18n="results.volumeTitle">Production historique</strong>
+                <p data-i18n="results.volumeText">
+                  Curry se situe à l'extrémité des comparaisons combinant nombre de
+                  tirs réussis et efficacité.
+                </p>
+              </div>
+
+              <span class="architecture-arrow">→</span>
+
+              <div class="architecture-block">
+                <span data-i18n="results.recordsLabel">Records</span>
+                <strong data-i18n="results.recordsTitle">Saisons dominantes</strong>
+                <p data-i18n="results.recordsText">
+                  Plusieurs de ses saisons figurent parmi les plus productives de
+                  l'histoire au tir à trois points.
+                </p>
+              </div>
+
+              <span class="architecture-arrow">→</span>
+
+              <div class="architecture-block">
+                <span data-i18n="results.impactLabel">Impact</span>
+                <strong data-i18n="results.impactTitle">Transformation du jeu</strong>
+                <p data-i18n="results.impactText">
+                  La période étudiée montre une forte hausse de la place du tir à
+                  trois points dans les choix offensifs de la NBA.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="gallery" class="content-section">
+            <p class="section-number">05</p>
+
+            <h2 data-i18n="gallery.title">Galerie de l'analyse</h2>
+
+            <div class="project-gallery">
+              <figure class="gallery-main">
+                <img
+                  id="gallery-main-image"
+                  src="./img/curry/Taff-1.png"
+                  alt="Aperçu de statistique réalisé"
+                >
+              </figure>
+
+              <div class="gallery-thumbnails">
+                <button
+                  class="gallery-thumbnail active"
+                  type="button"
+                  data-image="./img/curry/Taff-1.png"
+                  data-alt-fr="Aperçu de statistique réalisé"
+                  data-alt-en="Statistical Overview Completed"
+                  aria-label="Afficher le graphique volume et efficacité"
+                  data-i18n-aria="gallery.button1Aria"
+                >
+                  <img src="./img/curry/Taff-1.png" alt="">
+                </button>
+
+                <button
+                  class="gallery-thumbnail"
+                  type="button"
+                  data-image="./img/curry/Taff-2.png"
+                  data-alt-fr="Aperçu de statistique réalisé"
+                  data-alt-en="Statistical Overview Completed"
+                  aria-label="Afficher le graphique des records saisonniers"
+                  data-i18n-aria="gallery.button2Aria"
+                >
+                  <img src="./img/curry/Taff-2.png" alt="">
+                </button>
+
+                <button
+                  class="gallery-thumbnail"
+                  type="button"
+                  data-image="./img/curry/Taff-3.png"
+                  data-alt-fr="Aperçu de statistique réalisé"
+                  data-alt-en="Statistical Overview Completed"
+                  aria-label="Afficher le graphique de l'évolution NBA"
+                  data-i18n-aria="gallery.button3Aria"
+                >
+                  <img src="./img/curry/Taff-3.png" alt="">
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section id="lessons" class="content-section">
+            <p class="section-number">06</p>
+
+            <h2 data-i18n="lessons.title">Ce que ce projet m'a appris</h2>
+
+            <p data-i18n="lessons.text">
+              Ce projet m'a permis de parcourir un cycle complet d'analyse de données :
+              formuler une question, sélectionner des indicateurs, préparer plusieurs
+              sources et construire une narration visuelle capable de soutenir une
+              conclusion sans masquer les limites de l'étude.
+            </p>
+
+            <ul class="lessons-list">
+              <li data-i18n="lessons.item1">
+                Nettoyer et combiner des jeux de données hétérogènes sous R
+              </li>
+
+              <li data-i18n="lessons.item2">
+                Choisir des indicateurs complémentaires plutôt qu'une métrique unique
+              </li>
+
+              <li data-i18n="lessons.item3">
+                Concevoir des visualisations comparatives avec ggplot2
+              </li>
+
+              <li data-i18n="lessons.item4">
+                Transformer une analyse sportive en récit statistique clair
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projet suivant -->
+    <section class="next-project">
+      <div class="project-container">
+        <a href="industrial-flow-simulation.html" class="next-project-link">
+          <span data-i18n="next.label">Projet suivant</span>
+
+          <strong data-i18n="next.title">
+            Simulation de flux industriels
+          </strong>
+
+          <span class="next-arrow">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="project-footer">
+    <div class="project-container project-footer-inner">
+      <p>© <span id="year"></span> Quentin Wendling</p>
+
+      <a href="../../index.html#projects" data-i18n="footer.back">
+        Retour aux projets ↑
+      </a>
+    </div>
+  </footer>
+
+  <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="./js/stephen-curry.js"></script>
+</body>
+</html>

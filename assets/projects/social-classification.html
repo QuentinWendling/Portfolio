@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3J0PYDHEY"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z3J0PYDHEY');
+  </script>
+  
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Classification de données sociales — Quentin Wendling</title>
+
+  <meta
+    name="description"
+    content="Étude de cas d'un projet de classification textuelle comparant SVM, Random Forest, XGBoost et CamemBERT sur des données sociales en français."
+  >
+
+  <meta name="theme-color" content="#070b14">
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23050b18%22/><path d=%22M18 26 Q50 12 82 26%22 fill=%22none%22 stroke=%22%230078ff%22 stroke-width=%226%22 stroke-linecap=%22round%22/><text x=%2250%22 y=%2268%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%230078ff%22 font-family=%22Arial, sans-serif%22 letter-spacing=%22-3%22>QW</text></svg>"
+  >
+
+  <link
+    href="../vendor/swiper/swiper-bundle.min.css"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/styles.css"
+  >
+
+  <script>
+    const savedTheme = localStorage.getItem("portfolio-theme");
+
+    if (savedTheme) {
+      document.documentElement.dataset.theme = savedTheme;
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- En-tête -->
+  <header class="project-header">
+    <div class="project-header-inner">
+
+      <a
+        href="../../index.html"
+        class="project-logo"
+        aria-label="Retour à l'accueil"
+      >
+        <span class="project-logo-mark">QW</span>
+        <span>Quentin Wendling</span>
+      </a>
+
+      <nav class="project-header-actions">
+        <a
+          href="../../index.html#projects"
+          class="header-back-link"
+          data-i18n="nav.projects"
+        >
+          Projets
+        </a>
+
+        <button
+          class="language-toggle"
+          type="button"
+          aria-label="Switch website to English"
+        >
+          EN
+        </button>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Changer le thème"
+        >
+          <span class="theme-icon" aria-hidden="true">☼</span>
+        </button>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- Introduction -->
+    <section class="project-hero">
+      <div class="project-container">
+
+        <a
+          href="../../index.html#projects"
+          class="back-link"
+          data-i18n="project.back"
+        >
+          ← Retour aux projets
+        </a>
+
+        <div class="project-hero-grid">
+
+          <div class="project-hero-content">
+
+            <p
+              class="project-eyebrow"
+              data-i18n="project.category"
+            >
+              NLP · Machine learning · Projet académique
+            </p>
+
+            <h1 data-i18n="project.title">
+              Classification de données sociales
+            </h1>
+
+            <p
+              class="project-introduction"
+              data-i18n="project.introduction"
+            >
+              Comparaison de plusieurs approches de classification textuelle
+              pour détecter automatiquement les discours haineux, sexistes ou
+              discriminatoires dans des contenus issus des réseaux sociaux.
+            </p>
+
+            <div class="project-tags">
+              <span>Python</span>
+              <span>NLP</span>
+              <span>CamemBERT</span>
+              <span>SVM</span>
+              <span>Random Forest</span>
+              <span>XGBoost</span>
+              <span>TensorFlow</span>
+            </div>
+
+            <div class="project-actions">
+
+              <a
+                href="https://github.com/QuentinWendling/TER-Comparaison-de-plusieurs-approches-de-classification-pour-l-analyse-des-donnees-sociales"
+                class="button button-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="project.github"
+              >
+                Voir le code sur GitHub
+              </a>
+
+              <a
+                href="./doc/social-classification/Rapport TER.pdf"
+                class="button button-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="project.report"
+              >
+                Lire le rapport
+              </a>
+
+              <a
+                href="#case-study"
+                class="button button-secondary"
+                data-i18n="project.caseStudy"
+              >
+                Découvrir le projet
+              </a>
+
+            </div>
+          </div>
+
+          <aside class="project-metadata">
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.period">Période</span>
+              <strong>2024 — 2025</strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.context">Contexte</span>
+              <strong data-i18n="metadata.contextValue">
+                TER — Master 1 DCI
+              </strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.role">Rôle</span>
+              <strong data-i18n="metadata.roleValue">
+                Expérimentation NLP
+              </strong>
+            </div>
+
+            <div class="metadata-item">
+              <span data-i18n="metadata.type">Type</span>
+              <strong data-i18n="metadata.typeValue">
+                Benchmark de modèles
+              </strong>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Visuels principaux -->
+    <section class="project-cover">
+      <div class="project-container">
+        <figure class="project-cover-frame swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="./img/social-classification/Taff-1.png"
+                alt="Comparaison des performances et des temps d'entraînement sur le corpus Reddit Toxic, corpus de 20 000 textes"
+              >
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                src="./img/social-classification/Taff-2.png"
+                alt="Comparaison des performances et des temps d'entraînement sur le corpus haineux enrichi EmoTyc, corpus de 600 textes"
+              >
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                src="./img/social-classification/Taff-3.png"
+                alt="Comparaison des performances et des temps d'entraînement sur le corpus Sexiste, corpus de 300 textes"
+              >
+            </div>
+          </div>
+
+          <div class="swiper-pagination"></div>
+        </figure>
+      </div>
+    </section>
+
+
+    <!-- Étude de cas -->
+    <section id="case-study" class="case-study">
+      <div class="project-container case-study-grid">
+
+        <aside class="case-study-navigation">
+          <p data-i18n="summary.title">Sommaire</p>
+
+          <nav>
+            <a href="#context" data-i18n="summary.context">
+              Le contexte
+            </a>
+
+            <a href="#objective" data-i18n="summary.objective">
+              Les objectifs
+            </a>
+
+            <a href="#methodology" data-i18n="summary.methodology">
+              La méthodologie
+            </a>
+
+            <a href="#pipeline" data-i18n="summary.pipeline">
+              Le pipeline
+            </a>
+
+            <a href="#results" data-i18n="summary.results">
+              Les résultats
+            </a>
+
+            <a href="#lessons" data-i18n="summary.lessons">
+              Enseignements
+            </a>
+          </nav>
+        </aside>
+
+
+        <div class="case-study-content">
+
+          <section id="context" class="content-section">
+            <p class="section-number">01</p>
+
+            <h2 data-i18n="context.title">
+              Le contexte
+            </h2>
+
+            <p data-i18n="context.p1">
+              Les réseaux sociaux produisent un volume important de textes
+              courts, spontanés et peu structurés. Leur analyse peut aider à
+              identifier des signaux faibles, mais aussi à automatiser la
+              détection de contenus haineux, sexistes ou discriminatoires.
+            </p>
+
+            <p data-i18n="context.p2">
+              Réalisé dans le cadre d’un TER de Master 1, ce projet étudie
+              plusieurs méthodes adaptées au français. AngryBERT a été étudié
+              comme approche spécialisée dans l’état de l’art, tandis que le
+              benchmark expérimental confronte principalement CamemBERT à des
+              modèles classiques.
+            </p>
+          </section>
+
+
+          <section id="objective" class="content-section">
+            <p class="section-number">02</p>
+
+            <h2 data-i18n="objective.title">
+              Les objectifs
+            </h2>
+
+            <div class="objective-grid">
+
+              <article class="objective-card">
+                <span>01</span>
+
+                <h3 data-i18n="objective.card1Title">
+                  Comparer les modèles
+                </h3>
+
+                <p data-i18n="objective.card1Text">
+                  Mesurer les performances de SVM, Random Forest, XGBoost et
+                  CamemBERT sur plusieurs corpus francophones.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>02</span>
+
+                <h3 data-i18n="objective.card2Title">
+                  Évaluer les compromis
+                </h3>
+
+                <p data-i18n="objective.card2Text">
+                  Mettre en regard précision, robustesse et temps d’exécution
+                  afin d’identifier les approches les plus pertinentes.
+                </p>
+              </article>
+
+              <article class="objective-card">
+                <span>03</span>
+
+                <h3 data-i18n="objective.card3Title">
+                  Tester les émotions
+                </h3>
+
+                <p data-i18n="objective.card3Text">
+                  Vérifier si des annotations comme la colère, la peur ou la
+                  tristesse améliorent la détection des contenus problématiques.
+                </p>
+              </article>
+
+            </div>
+          </section>
+
+
+          <section id="methodology" class="content-section">
+            <p class="section-number">03</p>
+
+            <h2 data-i18n="methodology.title">
+              La méthodologie
+            </h2>
+
+            <p data-i18n="methodology.text">
+              La comparaison a été menée sur plusieurs jeux de données de tailles
+              et de niveaux de difficulté très différents. Les mêmes étapes de
+              préparation et d’évaluation ont été appliquées afin d’obtenir une
+              lecture cohérente des performances.
+            </p>
+
+            <div class="feature-list">
+
+              <div class="feature-item">
+                <span class="feature-icon">01</span>
+
+                <div>
+                  <h3 data-i18n="methodology.feature1Title">
+                    Corpus variés
+                  </h3>
+
+                  <p data-i18n="methodology.feature1Text">
+                    Tweets haineux, commentaires Reddit toxiques, corpus EmoTyC,
+                    textes sexistes et petit corpus de contenus extrémistes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">02</span>
+
+                <div>
+                  <h3 data-i18n="methodology.feature2Title">
+                    Prétraitement textuel
+                  </h3>
+
+                  <p data-i18n="methodology.feature2Text">
+                    Nettoyage, séparation des textes et des étiquettes, puis
+                    transformation en représentations Bag of Words ou TF-IDF.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">03</span>
+
+                <div>
+                  <h3 data-i18n="methodology.feature3Title">
+                    Modélisation
+                  </h3>
+
+                  <p data-i18n="methodology.feature3Text">
+                    Entraînement de modèles classiques avec scikit-learn et
+                    XGBoost, puis fine-tuning de CamemBERT avec TensorFlow.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">04</span>
+
+                <div>
+                  <h3 data-i18n="methodology.feature4Title">
+                    Évaluation commune
+                  </h3>
+
+                  <p data-i18n="methodology.feature4Text">
+                    Comparaison de l’accuracy et du temps d’exécution, avec une
+                    attention particulière portée à la taille et à la qualité
+                    des données disponibles.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <section id="pipeline" class="content-section">
+            <p class="section-number">04</p>
+
+            <h2 data-i18n="pipeline.title">
+              Le pipeline expérimental
+            </h2>
+
+            <div class="architecture-diagram">
+
+              <div class="architecture-block">
+                <span data-i18n="pipeline.dataLabel">Données</span>
+                <strong>Twitter · Reddit · EmoTyC</strong>
+                <p data-i18n="pipeline.dataText">
+                  Nettoyage, reconstruction des labels et séparation des jeux
+                  d’entraînement et de test
+                </p>
+              </div>
+
+              <span class="architecture-arrow">→</span>
+
+              <div class="architecture-block">
+                <span data-i18n="pipeline.modelsLabel">Modèles</span>
+                <strong>SVM · RFC · XGBoost · CamemBERT</strong>
+                <p data-i18n="pipeline.modelsText">
+                  Vectorisation BoW ou TF-IDF, ou tokenisation Transformer et
+                  fine-tuning
+                </p>
+              </div>
+
+              <span class="architecture-arrow">→</span>
+
+              <div class="architecture-block">
+                <span data-i18n="pipeline.evaluationLabel">Évaluation</span>
+                <strong>Accuracy · Temps</strong>
+                <p data-i18n="pipeline.evaluationText">
+                  Analyse comparative des performances, des coûts de calcul et
+                  de la robustesse
+                </p>
+              </div>
+
+            </div>
+          </section>
+
+
+          <section id="results" class="content-section">
+            <p class="section-number">05</p>
+
+            <h2 data-i18n="results.title">
+              Les résultats principaux
+            </h2>
+
+            <p data-i18n="results.text">
+              CamemBERT obtient les meilleurs scores globaux sur les corpus
+              suffisamment riches, tandis que les modèles classiques restent
+              très rapides et parfois proches en précision. Les expériences
+              montrent également que l’enrichissement émotionnel ne produit pas
+              de gain significatif dans ce cadre.
+            </p>
+
+            <div class="project-gallery">
+
+              <figure class="gallery-main">
+                <img
+                  id="gallery-main-image"
+                  src="./img/social-classification/Taff-1.png"
+                  alt="Comparaison des performances et des temps d'entraînement sur le corpus Reddit Toxic, corpus de 20 000 textes"
+                >
+              </figure>
+
+              <div class="gallery-thumbnails">
+
+                <button
+                  class="gallery-thumbnail active"
+                  type="button"
+                  title="Comparaison des performances et des temps d'entraînement sur le corpus Reddit Toxic, corpus de 20 000 textes"
+                  data-title-fr="Comparaison des performances et des temps d'entraînement sur le corpus Reddit Toxic, corpus de 20 000 textes"
+                  data-title-en="Comparison of performance and training times on the Reddit Toxic corpus, a dataset of 20,000 texts"
+                  data-image="./img/social-classification/Taff-1.png"
+                  data-alt-fr="Comparaison des performances et des temps d'entraînement sur le corpus Reddit Toxic, corpus de 20 000 textes"
+                  data-alt-en="Comparison of performance and training times on the Reddit Toxic corpus, a dataset of 20,000 texts"
+                  data-aria-fr="Afficher la synthèse des résultats"
+                  data-aria-en="Show the results overview"
+                  aria-label="Afficher la synthèse des résultats"
+                >
+                  <img
+                    src="./img/social-classification/Taff-1.png"
+                    alt="Comparaison des performances et des temps d'entraînement sur le corpus Reddit Toxic, corpus de 20 000 textes"
+                  >
+                </button>
+
+                <button
+                  class="gallery-thumbnail"
+                  type="button"
+                  data-image="./img/social-classification/Taff-2.png"
+                  title="Comparaison des performances et des temps d'entraînement sur le corpus haineux enrichi EmoTyc, corpus de 600 textes"
+                  data-title-fr="Comparaison des performances et des temps d'entraînement sur le corpus haineux enrichi EmoTyc, corpus de 600 textes"
+                  data-title-en="Comparison of performance and training times on the EmoTyc-enriched hate speech corpus, a corpus of 600 texts"
+                  data-alt-fr="Comparaison des performances et des temps d'entraînement sur le corpus haineux enrichi EmoTyc, corpus de 600 textes"
+                  data-alt-en="Comparison of performance and training times on the EmoTyc-enriched hate speech corpus, a corpus of 600 texts"
+                  data-aria-fr="Afficher le benchmark des modèles"
+                  data-aria-en="Show the model benchmark"
+                  aria-label="Afficher le benchmark des modèles"
+                >
+                  <img
+                    src="./img/social-classification/Taff-2.png"
+                    alt=""
+                  >
+                </button>
+
+                <button
+                  class="gallery-thumbnail"
+                  type="button"
+                  data-image="./img/social-classification/Taff-3.png"
+                  title="Comparaison des performances et des temps d'entraînement sur le corpus Sexiste, corpus de 300 textes"
+                  data-title-fr="Comparaison des performances et des temps d'entraînement sur le corpus Sexiste, corpus de 300 textes"
+                  data-title-en="Comparison of performance and training times on the Sexiste corpus, a collection of 300 texts"
+                  data-alt-fr="Comparaison des performances et des temps d'entraînement sur le corpus Sexiste, corpus de 300 textes"
+                  data-alt-en="Comparison of performance and training times on the Sexiste corpus, a collection of 300 texts"
+                  data-aria-fr="Afficher la comparaison des corpus"
+                  data-aria-en="Show the dataset comparison"
+                  aria-label="Afficher la comparaison des corpus"
+                >
+                  <img
+                    src="./img/social-classification/Taff-3.png"
+                    alt=""
+                  >
+                </button>
+
+              </div>
+            </div>
+          </section>
+
+
+          <section id="lessons" class="content-section">
+            <p class="section-number">06</p>
+
+            <h2 data-i18n="lessons.title">
+              Ce que ce projet m'a appris
+            </h2>
+
+            <p data-i18n="lessons.text">
+              Ce TER m’a permis de construire un protocole expérimental complet
+              en NLP, de comparer des familles de modèles très différentes et
+              d’interpréter les résultats au-delà d’un simple score de précision.
+            </p>
+
+            <ul class="lessons-list">
+              <li data-i18n="lessons.item1">
+                Concevoir un pipeline reproductible de classification textuelle
+              </li>
+
+              <li data-i18n="lessons.item2">
+                Fine-tuner un Transformer français avec des ressources limitées
+              </li>
+
+              <li data-i18n="lessons.item3">
+                Comparer précision, rapidité et coût computationnel
+              </li>
+
+              <li data-i18n="lessons.item4">
+                Mesurer l’impact de la taille et de la qualité des corpus
+              </li>
+
+              <li data-i18n="lessons.item5">
+                Questionner la valeur réelle de variables émotionnelles ajoutées
+              </li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Projet suivant -->
+    <section class="next-project">
+      <div class="project-container">
+
+        <a
+          href="tsunami-prediction.html"
+          class="next-project-link"
+        >
+          <span data-i18n="next.label">Projet suivant</span>
+
+          <strong data-i18n="next.title">
+            Prédiction de tsunami
+          </strong>
+
+          <span class="next-arrow">→</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="project-footer">
+    <div class="project-container project-footer-inner">
+
+      <p>
+        © <span id="year"></span> Quentin Wendling
+      </p>
+
+      <a
+        href="../../index.html#projects"
+        data-i18n="footer.back"
+      >
+        Retour aux projets ↑
+      </a>
+
+    </div>
+  </footer>
+
+  <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="./js/project-page-social-classification.js"></script>
+</body>
+</html>
